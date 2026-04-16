@@ -1,0 +1,52 @@
+plant_id,toxicity_label,toxicity_class
+borago_officinalis_l,Low/Culinary,Low
+atropa_belladonna_l,Highly Toxic / Restricted,High
+rubus_spp,Low/Culinary,Low
+menyanthes_trifoliata_l,Low,Low
+arctium_lappa_l,Low,Low
+brassica_oleracea_l,Low/Culinary,Low
+chondrus_crispus_stackh,Low/Culinary,Low
+chamaemelum_nobile,Low,Low
+sinapis_arvensis_l,Low,Low
+syzygium_aromaticum,Low,Low
+symphytum_officinale_l,Medium (Caution),Medium
+taraxacum_officinale_weber,Low/Culinary,Low
+rumex_obtusifolia_l,Low,Low
+palmaria_palmata_l_kuntze,Low/Culinary,Low
+orchis_mascula_l_l,Low,Low
+sambucus_nigra_l,Low (Flowers),Low
+tanacetum_parthenium_l,Low,Low
+linum_usitatissimum_l,Low,Low
+digitalis_purpurea_l,Highly Toxic,High
+ulex_europaeus_l,Low,Low
+allium_sativum_l,Low/Culinary,Low
+ribes_grossularia_l,Low,Low
+asplenium_scolopendrium_l,Low,Low
+conium_maculatum_l,Highly Toxic,High
+sempervivum_tectorum_l,Low,Low
+hedera_helix_l,Low,Low
+laminaria_l,Low/Culinary,Low
+filipendula_ulmaria_l_maxim,Low,Low
+urtica_dioica_l,Low/Culinary,Low
+avena_sativa_l,Low/Culinary,Low
+allium_cepa_l,Low/Culinary,Low
+pisum_sativum_l,Low/Culinary,Low
+mentha_piperita_l,Low/Culinary,Low
+plantago_lanceolata_l,Low,Low
+plantago_major_l,Low,Low
+solanum_tuberosum_l,Low/Culinary,Low
+primula_vulgaris_hudson,Low,Low
+trifolium_pratense_l,Low,Low
+cassia_spp,Medium (Laxative),Medium
+potentilla_anserina_l,Low,Low
+prunus_spinosa_l,Low,Low
+mentha_spicata_l,Low/Culinary,Low
+hypericum_perforatum_l,Low,Low
+sphagnum_spp,Low,Low
+oxalis_acetosella_l,Low,Low
+lobelia_dortmanna_l,Low,Low
+achillea_millefolium_l,Low,Low
+aloe_vera_l_burm_f,Low,Low
+lavandula_angustifolia_mill,Low,Low
+oenothera_biennis_l,Low,Low
+arnica_montana_l,Low (Homeopathic),Low

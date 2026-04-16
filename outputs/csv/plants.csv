@@ -1,0 +1,52 @@
+plant_id,plant_name,scientific_name,irish_name,is_famine_food,cultural_importance
+borago_officinalis_l,Bee borage,Borago officinalis L.,Borrairte gorm,False,Standard cooling herb
+atropa_belladonna_l,Belladonna / Deadly nightshade,Atropa belladonna L.,Miotóg buide,False,Historically used as poison
+rubus_spp,Blackberry,Rubus spp.,Sceach / Dris,False,Ubiquitous wild fruit
+menyanthes_trifoliata_l,Bogbean,Menyanthes trifoliata L.,Bachrán,False,Traditional wetland tonic
+arctium_lappa_l,Burdock,Arctium lappa L.,Meacan doga,False,Commonly used for skin and joints
+brassica_oleracea_l,Cabbage,Brassica oleracea L.,Cabáiste,False,Garden staple
+chondrus_crispus_stackh,Carrageen moss,Chondrus crispus Stackh.,Carraigín,False,Iconic Irish seaweed
+chamaemelum_nobile,Chamomile,Chamaemelum nobile,Camán meall,False,Widespread sleep aid
+sinapis_arvensis_l,Charlock,Sinapis arvensis L.,Praiseach bhuí,True,Historical survival food
+syzygium_aromaticum,Cloves,Syzygium aromaticum,N/A,False,Standard spice-based medicine
+symphytum_officinale_l,Comfrey / 'Knit bones',Symphytum officinale L.,Lus na gCnamh,False,Known for 'knitting' bones
+taraxacum_officinale_weber,Dandelion,Taraxacum officinale Weber,Caisearbhán,False,Called 'pissy-beds' by children
+rumex_obtusifolia_l,Dock,Rumex obtusifolia L.,Copóg sráide,True,The symbiotic 'cure' for nettles
+palmaria_palmata_l_kuntze,Dulse,Palmaria palmata (L.) Kuntze,Duileasc mín,False,Traditional snack seaweed
+orchis_mascula_l_l,Early purple orchid,Orchis mascula (L.) L.,Magairlín meidhreach,False,Rare folklore use for romance
+sambucus_nigra_l,Elder flowers,Sambucus nigra L.,Trom,False,Seasonal spring beverage source
+tanacetum_parthenium_l,Feverfew,Tanacetum parthenium L.,Lus deartan,False,Key headache remedy
+linum_usitatissimum_l,Flax,Linum usitatissimum L.,Líon,False,Linked to Irish linen industry
+digitalis_purpurea_l,Foxglove / 'Fairy fingers',Digitalis purpurea L.,Lus mór,False,Known as 'Fairy fingers'; strong folklore presence
+ulex_europaeus_l,Furze / Gorse,Ulex europaeus L.,Aiteann,False,Ubiquitous Irish shrub
+allium_sativum_l,Garlic (wild and cultivated),Allium sativum L.,Gaírleóg,False,Universal antiseptic
+ribes_grossularia_l,Gooseberry bush,Ribes grossularia L.,Spriúnán,False,Folk eye cure using thorns
+asplenium_scolopendrium_l,Hart’s tongue fern,Asplenium scolopendrium (L.),Leadhb gadhair,False,Specific burn remedy
+conium_maculatum_l,Hemlock,Conium maculatum L.,Tréanlus,False,Lethal poison
+sempervivum_tectorum_l,House leek,Sempervivum tectorum L.,Leigis,False,Grown on roofs for protection
+hedera_helix_l,Ivy,Hedera helix L.,Eidhneán,False,"One side draws, the other heals"
+laminaria_l,Kelp,Laminaria L.,Feamain builgíneac,False,Rich in iodine; traditional tonic
+filipendula_ulmaria_l_maxim,Meadowsweet,Filipendula ulmaria (L.) Maxim.,Airgead luachra,False,Traditional pain reliever
+urtica_dioica_l,Nettles,Urtica dioica L.,Neantóg,True,Spring blood purifier
+avena_sativa_l,Oats,Avena sativa L.,Coire,False,Skin soothing staple
+allium_cepa_l,Onion,Allium cepa L.,Uinnean,False,Poultice for draw-out effects
+pisum_sativum_l,Peas,Pisum sativum L.,Piseanna garraí,False,Historical childhood illness cure
+mentha_piperita_l,Peppermint,Mentha piperita L.,Lus an Piobair,False,Standard digestive aid
+plantago_lanceolata_l,Ribwort plantain,Plantago lanceolata L.,Slánlus,False,'The healing herb'
+plantago_major_l,Greater plantain,Plantago major L.,Slánlus mór,False,Used for surface healing
+solanum_tuberosum_l,Potato,Solanum tuberosum L.,Bun-tata,False,National staple; gland cure
+primula_vulgaris_hudson,Primrose,Primula vulgaris Hudson,Samhaircín,False,Early spring flowers for pain
+trifolium_pratense_l,Red clover,Trifolium pratense L.,Seamair dhearg,False,Common cough remedy
+cassia_spp,Senna,Cassia spp.,N/A,False,Imported purgative
+potentilla_anserina_l,Silverweed,Potentilla anserina L.,Briosclán,True,Survival root during famine
+prunus_spinosa_l,Sloe / Blackthorn,Prunus spinosa L.,Áirne,False,Blackthorn winter tonic
+mentha_spicata_l,Spearmint,Mentha spicata L.,Mismín garraí,False,Garden mint staple
+hypericum_perforatum_l,St. John's Wort,Hypericum perforatum L.,Beathnua baineann,False,Key emotional wellbeing herb
+sphagnum_spp,Peat moss / Turf,Sphagnum spp.,Síoda na móna,False,Deeply linked to Irish turf bogs
+oxalis_acetosella_l,Wood sorrel / shamrock,Oxalis acetosella L.,Seamróg,False,Symbolic Irish 'Shamrock'
+lobelia_dortmanna_l,Water lobelia,Lobelia dortmanna L.,Plúr an locháin,False,Rare aquatic medicine
+achillea_millefolium_l,Yarrow,Achillea millefolium L.,Athair talon,False,Universal healing flowering plant
+aloe_vera_l_burm_f,Aloe vera,Aloe vera (L.) Burm.f.,N/A,False,Modern retail burn cure discovery
+lavandula_angustifolia_mill,Lavender oil,Lavandula angustifolia Mill.,N/A,False,Modern aromatherapy staple
+oenothera_biennis_l,Evening primrose oil,Oenothera biennis L.,N/A,False,Retail supplement staple
+arnica_montana_l,Arnica,Arnica montana L.,N/A,False,Homeopathic bruising remedy
