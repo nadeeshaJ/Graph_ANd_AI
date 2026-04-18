@@ -1,0 +1,111 @@
+plant_id,raw_usage,ailment_name,category_name
+borago_officinalis_l,Flowers eaten or in a drink for a cooling effect,Flowers eaten or in a drink for a cooling effect,Other
+atropa_belladonna_l,Poison,Poison,Toxic/Poison
+atropa_belladonna_l,Chapped hands,Skin,Skin/Wound
+atropa_belladonna_l,Bad back,Bone & Muscle,Pain/Musculoskeletal
+atropa_belladonna_l,Fever,Fever,Infection/Fever
+rubus_spp,Splinter removal,Splinter removal,Other
+menyanthes_trifoliata_l,Spring cleanse,General Health,General Tonic
+menyanthes_trifoliata_l,Liver,Liver,Other
+menyanthes_trifoliata_l,Blood cleaning,General Health,General Tonic
+arctium_lappa_l,Boils,Boils,Skin/Wound
+arctium_lappa_l,Arthritis,Arthritis,Pain/Musculoskeletal
+arctium_lappa_l,Rheumatism,Rheumatism,Pain/Musculoskeletal
+brassica_oleracea_l,Blood,Circulation,Circulatory
+brassica_oleracea_l,Soothing womb after birth,Women's Health,Women's Health
+chondrus_crispus_stackh,Arthritis,Arthritis,Pain/Musculoskeletal
+chondrus_crispus_stackh,Rheumatism,Rheumatism,Pain/Musculoskeletal
+chondrus_crispus_stackh,Coughs,Bronchitis,Respiratory
+chondrus_crispus_stackh,Bronchial,Bronchitis,Respiratory
+chondrus_crispus_stackh,Constipation,Digestion,Digestive
+chamaemelum_nobile,Sleep,Calming,Emotional Wellbeing
+chamaemelum_nobile,Calming,Calming,Emotional Wellbeing
+chamaemelum_nobile,Chicken pox,Chicken pox,Other
+chamaemelum_nobile,Skin irritations,Skin,Skin/Wound
+chamaemelum_nobile,Pregnancy,Women's Health,Women's Health
+sinapis_arvensis_l,Famine food staple,Famine food staple,Other
+syzygium_aromaticum,Cold/Bronchitis,Cold,Respiratory
+syzygium_aromaticum,Toothache,Toothache,Other
+symphytum_officinale_l,Broken bones,Bone & Muscle,Pain/Musculoskeletal
+symphytum_officinale_l,Sore back,Bone & Muscle,Pain/Musculoskeletal
+symphytum_officinale_l,Asthma,Respiratory,Respiratory
+symphytum_officinale_l,Twisted ankle,Bone & Muscle,Pain/Musculoskeletal
+symphytum_officinale_l,Vitamin B12,Vitamin B12,Other
+taraxacum_officinale_weber,Diuretic,Diuretic,Other
+taraxacum_officinale_weber,Remove warts,Remove warts,Other
+taraxacum_officinale_weber,Bladder,Bladder,Other
+taraxacum_officinale_weber,Detoxification,General Health,General Tonic
+rumex_obtusifolia_l,Nettle stings,Stings,Skin/Wound
+rumex_obtusifolia_l,Famine food staple,Famine food staple,Other
+palmaria_palmata_l_kuntze,Coughs,Bronchitis,Respiratory
+palmaria_palmata_l_kuntze,Bronchial,Bronchitis,Respiratory
+palmaria_palmata_l_kuntze,Gelatin dessert,Gelatin dessert,Other
+orchis_mascula_l_l,Love charms,Love charms,Other
+sambucus_nigra_l,Pancakes,Pancakes,Other
+sambucus_nigra_l,Fizzy drink,Fizzy drink,Other
+sambucus_nigra_l,Colds,Cold,Respiratory
+sambucus_nigra_l,Fever,Fever,Infection/Fever
+tanacetum_parthenium_l,Arthritis,Arthritis,Pain/Musculoskeletal
+tanacetum_parthenium_l,Rheumatism,Rheumatism,Pain/Musculoskeletal
+tanacetum_parthenium_l,Migraines,Headache,Neurological
+linum_usitatissimum_l,Bronchitis,Bronchitis,Respiratory
+linum_usitatissimum_l,Laxative,Digestion,Digestive
+digitalis_purpurea_l,Heart stimulant,Heart stimulant,Other
+ulex_europaeus_l,Health tonic,General Health,General Tonic
+allium_sativum_l,Colds,Cold,Respiratory
+allium_sativum_l,Congestion,Bronchitis,Respiratory
+allium_sativum_l,Circulation,Circulation,Circulatory
+allium_sativum_l,Chillblains,Chillblains,Other
+ribes_grossularia_l,Eye sty (thorns),Eye,Eye
+asplenium_scolopendrium_l,Burns ointment,Burns,Skin/Wound
+conium_maculatum_l,Poison historically,Poison,Toxic/Poison
+sempervivum_tectorum_l,General health,General Health,General Tonic
+hedera_helix_l,Boils,Boils,Skin/Wound
+hedera_helix_l,Infections,Infections,Other
+laminaria_l,Arthritis,Arthritis,Pain/Musculoskeletal
+laminaria_l,Rheumatism,Rheumatism,Pain/Musculoskeletal
+laminaria_l,Constipation,Digestion,Digestive
+laminaria_l,Tonic,General Health,General Tonic
+filipendula_ulmaria_l_maxim,Hips pain,Bone & Muscle,Pain/Musculoskeletal
+filipendula_ulmaria_l_maxim,Breathing pain,Bone & Muscle,Pain/Musculoskeletal
+urtica_dioica_l,Blood tonic,Circulation,Circulatory
+urtica_dioica_l,Iron,Circulation,Circulatory
+urtica_dioica_l,Spring soup,Spring soup,Other
+urtica_dioica_l,Boils,Boils,Skin/Wound
+urtica_dioica_l,Health tonic,General Health,General Tonic
+avena_sativa_l,Skin,Skin,Skin/Wound
+avena_sativa_l,Headache,Headache,Neurological
+allium_cepa_l,Cold,Cold,Respiratory
+allium_cepa_l,Bee sting,Stings,Skin/Wound
+allium_cepa_l,Drawing poison,Poison,Toxic/Poison
+pisum_sativum_l,Measles,Measles,Infection/Fever
+mentha_piperita_l,Digestion,Digestion,Digestive
+mentha_piperita_l,Stomach,Digestion,Digestive
+mentha_piperita_l,Calming,Calming,Emotional Wellbeing
+plantago_lanceolata_l,Wounds,Wounds,Skin/Wound
+plantago_lanceolata_l,Insect stings,Stings,Skin/Wound
+plantago_major_l,Wounds,Wounds,Skin/Wound
+plantago_major_l,Varicose ulcers,Varicose ulcers,Other
+plantago_major_l,Stings,Stings,Skin/Wound
+solanum_tuberosum_l,Swollen glands,Swollen glands,Other
+primula_vulgaris_hudson,Rheumatic pains,Rheumatism,Pain/Musculoskeletal
+trifolium_pratense_l,Coughs,Bronchitis,Respiratory
+cassia_spp,Measles,Measles,Infection/Fever
+potentilla_anserina_l,Famine food staple,Famine food staple,Other
+prunus_spinosa_l,Sloe gin,Sloe gin,Other
+mentha_spicata_l,Stomach,Digestion,Digestive
+mentha_spicata_l,Calming,Calming,Emotional Wellbeing
+hypericum_perforatum_l,Depression,Calming,Emotional Wellbeing
+hypericum_perforatum_l,Feeling down,Calming,Emotional Wellbeing
+sphagnum_spp,Chapped hands,Skin,Skin/Wound
+sphagnum_spp,Bad tummy (soot),Digestion,Digestive
+oxalis_acetosella_l,Blood,Circulation,Circulatory
+lobelia_dortmanna_l,Scarlet fever historically,Fever,Infection/Fever
+achillea_millefolium_l,Colds,Cold,Respiratory
+achillea_millefolium_l,Rheumatism,Rheumatism,Pain/Musculoskeletal
+aloe_vera_l_burm_f,Burns,Burns,Skin/Wound
+lavandula_angustifolia_mill,Relaxation,Calming,Emotional Wellbeing
+lavandula_angustifolia_mill,Skin,Skin,Skin/Wound
+oenothera_biennis_l,Health fortified,General Health,General Tonic
+arnica_montana_l,Healing,Wounds,Skin/Wound
+arnica_montana_l,Bruising,Skin,Skin/Wound

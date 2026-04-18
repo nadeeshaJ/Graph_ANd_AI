@@ -1,0 +1,52 @@
+plant_id,plant_name,scientific_name,irish_name,is_famine_food,cultural_importance,toxicity_label,toxicity_class
+borago_officinalis_l,Bee borage,Borago officinalis L.,Borrairte gorm,False,Standard cooling herb,Low/Culinary,Low
+atropa_belladonna_l,Belladonna / Deadly nightshade,Atropa belladonna L.,Miotóg buide,False,Historically used as poison,Highly Toxic / Restricted,High
+rubus_spp,Blackberry,Rubus spp.,Sceach / Dris,False,Ubiquitous wild fruit,Low/Culinary,Low
+menyanthes_trifoliata_l,Bogbean,Menyanthes trifoliata L.,Bachrán,False,Traditional wetland tonic,Low,Low
+arctium_lappa_l,Burdock,Arctium lappa L.,Meacan doga,False,Commonly used for skin and joints,Low,Low
+brassica_oleracea_l,Cabbage,Brassica oleracea L.,Cabáiste,False,Garden staple,Low/Culinary,Low
+chondrus_crispus_stackh,Carrageen moss,Chondrus crispus Stackh.,Carraigín,False,Iconic Irish seaweed,Low/Culinary,Low
+chamaemelum_nobile,Chamomile,Chamaemelum nobile,Camán meall,False,Widespread sleep aid,Low,Low
+sinapis_arvensis_l,Charlock,Sinapis arvensis L.,Praiseach bhuí,True,Historical survival food,Low,Low
+syzygium_aromaticum,Cloves,Syzygium aromaticum,N/A,False,Standard spice-based medicine,Low,Low
+symphytum_officinale_l,Comfrey / 'Knit bones',Symphytum officinale L.,Lus na gCnamh,False,Known for 'knitting' bones,Medium (Caution),Medium
+taraxacum_officinale_weber,Dandelion,Taraxacum officinale Weber,Caisearbhán,False,Called 'pissy-beds' by children,Low/Culinary,Low
+rumex_obtusifolia_l,Dock,Rumex obtusifolia L.,Copóg sráide,True,The symbiotic 'cure' for nettles,Low,Low
+palmaria_palmata_l_kuntze,Dulse,Palmaria palmata (L.) Kuntze,Duileasc mín,False,Traditional snack seaweed,Low/Culinary,Low
+orchis_mascula_l_l,Early purple orchid,Orchis mascula (L.) L.,Magairlín meidhreach,False,Rare folklore use for romance,Low,Low
+sambucus_nigra_l,Elder flowers,Sambucus nigra L.,Trom,False,Seasonal spring beverage source,Low (Flowers),Low
+tanacetum_parthenium_l,Feverfew,Tanacetum parthenium L.,Lus deartan,False,Key headache remedy,Low,Low
+linum_usitatissimum_l,Flax,Linum usitatissimum L.,Líon,False,Linked to Irish linen industry,Low,Low
+digitalis_purpurea_l,Foxglove / 'Fairy fingers',Digitalis purpurea L.,Lus mór,False,Known as 'Fairy fingers'; strong folklore presence,Highly Toxic,High
+ulex_europaeus_l,Furze / Gorse,Ulex europaeus L.,Aiteann,False,Ubiquitous Irish shrub,Low,Low
+allium_sativum_l,Garlic (wild and cultivated),Allium sativum L.,Gaírleóg,False,Universal antiseptic,Low/Culinary,Low
+ribes_grossularia_l,Gooseberry bush,Ribes grossularia L.,Spriúnán,False,Folk eye cure using thorns,Low,Low
+asplenium_scolopendrium_l,Hart’s tongue fern,Asplenium scolopendrium (L.),Leadhb gadhair,False,Specific burn remedy,Low,Low
+conium_maculatum_l,Hemlock,Conium maculatum L.,Tréanlus,False,Lethal poison,Highly Toxic,High
+sempervivum_tectorum_l,House leek,Sempervivum tectorum L.,Leigis,False,Grown on roofs for protection,Low,Low
+hedera_helix_l,Ivy,Hedera helix L.,Eidhneán,False,"One side draws, the other heals",Low,Low
+laminaria_l,Kelp,Laminaria L.,Feamain builgíneac,False,Rich in iodine; traditional tonic,Low/Culinary,Low
+filipendula_ulmaria_l_maxim,Meadowsweet,Filipendula ulmaria (L.) Maxim.,Airgead luachra,False,Traditional pain reliever,Low,Low
+urtica_dioica_l,Nettles,Urtica dioica L.,Neantóg,True,Spring blood purifier,Low/Culinary,Low
+avena_sativa_l,Oats,Avena sativa L.,Coire,False,Skin soothing staple,Low/Culinary,Low
+allium_cepa_l,Onion,Allium cepa L.,Uinnean,False,Poultice for draw-out effects,Low/Culinary,Low
+pisum_sativum_l,Peas,Pisum sativum L.,Piseanna garraí,False,Historical childhood illness cure,Low/Culinary,Low
+mentha_piperita_l,Peppermint,Mentha piperita L.,Lus an Piobair,False,Standard digestive aid,Low/Culinary,Low
+plantago_lanceolata_l,Ribwort plantain,Plantago lanceolata L.,Slánlus,False,'The healing herb',Low,Low
+plantago_major_l,Greater plantain,Plantago major L.,Slánlus mór,False,Used for surface healing,Low,Low
+solanum_tuberosum_l,Potato,Solanum tuberosum L.,Bun-tata,False,National staple; gland cure,Low/Culinary,Low
+primula_vulgaris_hudson,Primrose,Primula vulgaris Hudson,Samhaircín,False,Early spring flowers for pain,Low,Low
+trifolium_pratense_l,Red clover,Trifolium pratense L.,Seamair dhearg,False,Common cough remedy,Low,Low
+cassia_spp,Senna,Cassia spp.,N/A,False,Imported purgative,Medium (Laxative),Medium
+potentilla_anserina_l,Silverweed,Potentilla anserina L.,Briosclán,True,Survival root during famine,Low,Low
+prunus_spinosa_l,Sloe / Blackthorn,Prunus spinosa L.,Áirne,False,Blackthorn winter tonic,Low,Low
+mentha_spicata_l,Spearmint,Mentha spicata L.,Mismín garraí,False,Garden mint staple,Low/Culinary,Low
+hypericum_perforatum_l,St. John's Wort,Hypericum perforatum L.,Beathnua baineann,False,Key emotional wellbeing herb,Low,Low
+sphagnum_spp,Peat moss / Turf,Sphagnum spp.,Síoda na móna,False,Deeply linked to Irish turf bogs,Low,Low
+oxalis_acetosella_l,Wood sorrel / shamrock,Oxalis acetosella L.,Seamróg,False,Symbolic Irish 'Shamrock',Low,Low
+lobelia_dortmanna_l,Water lobelia,Lobelia dortmanna L.,Plúr an locháin,False,Rare aquatic medicine,Low,Low
+achillea_millefolium_l,Yarrow,Achillea millefolium L.,Athair talon,False,Universal healing flowering plant,Low,Low
+aloe_vera_l_burm_f,Aloe vera,Aloe vera (L.) Burm.f.,N/A,False,Modern retail burn cure discovery,Low,Low
+lavandula_angustifolia_mill,Lavender oil,Lavandula angustifolia Mill.,N/A,False,Modern aromatherapy staple,Low,Low
+oenothera_biennis_l,Evening primrose oil,Oenothera biennis L.,N/A,False,Retail supplement staple,Low,Low
+arnica_montana_l,Arnica,Arnica montana L.,N/A,False,Homeopathic bruising remedy,Low (Homeopathic),Low
