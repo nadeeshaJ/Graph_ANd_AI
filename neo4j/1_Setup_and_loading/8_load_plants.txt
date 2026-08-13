@@ -1,0 +1,14 @@
+
+// STEP 8: LOAD PLANTS
+// Core medicinal plant entities
+
+
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/nadeeshaJ/Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/main/outputs/plants.csv" AS row
+MERGE (p:Plant {id: row.plant_id})
+SET p.name = row.plant_name,
+    p.sciName = row.scientific_name,
+    p.irishName = row.irish_name,
+    p.famineFood = toBoolean(row.is_famine_food),
+    p.culturalImportance = row.cultural_importance,
+    p.toxicityLabel = row.toxicity_label,
+    p.toxicityClass = row.toxicity_class;

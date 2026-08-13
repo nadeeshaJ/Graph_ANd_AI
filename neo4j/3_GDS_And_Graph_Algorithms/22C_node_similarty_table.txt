@@ -1,0 +1,15 @@
+
+// STEP 22C: NODE SIMILARITY TABLE
+// Recommendation-ready similarity
+
+
+CALL gds.nodeSimilarity.stream('plantSimilarityGraph')
+YIELD node1, node2, similarity
+WITH gds.util.asNode(node1) AS p1,
+     gds.util.asNode(node2) AS p2,
+     similarity
+RETURN p1.name AS plant1,
+       p2.name AS plant2,
+       round(similarity, 3) AS similarity
+ORDER BY similarity DESC
+LIMIT 15;

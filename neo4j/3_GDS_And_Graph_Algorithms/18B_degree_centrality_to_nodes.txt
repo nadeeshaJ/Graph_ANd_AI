@@ -1,0 +1,8 @@
+
+// STEP 18B: WRITE DEGREE CENTRALITY TO NODES
+
+
+CALL gds.degree.write('ailmentGraph', {
+  writeProperty: 'degreeCentrality'
+})
+YIELD nodePropertiesWritten;

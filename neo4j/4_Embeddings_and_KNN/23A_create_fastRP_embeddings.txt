@@ -1,0 +1,11 @@
+
+// STEP 23A: CREATE FASTRP EMBEDDINGS
+// Graph ML representation learning
+
+
+CALL gds.fastRP.mutate('ailmentGraph', {
+  mutateProperty: 'embedding',
+  embeddingDimension: 64,
+  randomSeed: 42
+})
+YIELD nodePropertiesWritten;

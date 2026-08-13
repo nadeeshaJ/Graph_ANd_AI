@@ -1,0 +1,11 @@
+
+// STEP 21: WRITE SAFE MULTI-USE FLAG
+// for later recommendation and ML
+
+
+MATCH (p:Plant)
+SET p.isSafeMultiUse =
+CASE
+  WHEN p.toxicityClass = 'Low' AND p.ailmentCount > 2 THEN true
+  ELSE false
+END;

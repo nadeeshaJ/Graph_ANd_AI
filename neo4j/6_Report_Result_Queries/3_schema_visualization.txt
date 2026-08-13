@@ -1,0 +1,6 @@
+// =====================================================
+// RESULT 3: SCHEMA VISUALIZATION
+// Best for ontology / graph schema screenshot
+// =====================================================
+
+CALL db.schema.visualization();

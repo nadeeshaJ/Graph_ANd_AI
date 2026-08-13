@@ -1,0 +1,22 @@
+
+// RESULT 12: LOUVAIN COMMUNITY OUTPUT
+// Use for therapeutic cluster interpretation
+
+
+// Find plants and their ailments to build the community profile
+MATCH (p:Plant)-[:TREATS]->(a:Ailment)
+WITH p.communityId AS communityId, 
+     collect(DISTINCT a.name)[0..10] AS sampleAilments,
+     collect(DISTINCT p.name) AS allPlantsInCommunity
+
+// Re-match plants to get individual stats, filtered by the communities found above
+MATCH (p:Plant)
+WHERE p.communityId = communityId
+RETURN p.communityId AS communityId,
+       p.name AS plant,
+       p.degreeCentrality AS degreeCentrality,
+       p.ailmentCount AS ailmentCount,
+       sampleAilments,
+       // We can also show how many other plants are in this same cluster
+       size(allPlantsInCommunity) AS totalPlantsInCommunity
+ORDER BY communityId, degreeCentrality DESC;

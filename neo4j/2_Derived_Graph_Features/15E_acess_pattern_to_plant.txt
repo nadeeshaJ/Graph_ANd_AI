@@ -1,0 +1,14 @@
+
+// STEP 15E: WRITE ACCESS PATTERN TO PLANT
+
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:AVAILABLE_AT]->(s:Shop)
+WITH p, collect(DISTINCT s.type) AS sourceTypes
+SET p.accessPattern =
+CASE
+  WHEN 'Wild' IN sourceTypes AND size(sourceTypes) = 1 THEN 'Wild Only'
+  WHEN 'Wild' IN sourceTypes AND size(sourceTypes) > 1 THEN 'Mixed Access'
+  WHEN size(sourceTypes) = 1 THEN sourceTypes[0]
+  ELSE 'Mixed Retail'
+END;

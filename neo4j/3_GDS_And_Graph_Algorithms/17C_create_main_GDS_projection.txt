@@ -1,0 +1,10 @@
+
+// STEP 17C: CREATE MAIN GDS PROJECTION
+// Plant-Ailment graph for graph algorithms
+
+
+CALL gds.graph.project(
+  'ailmentGraph',
+  ['Plant', 'Ailment'],
+  { TREATS: { orientation: 'UNDIRECTED' } }
+);

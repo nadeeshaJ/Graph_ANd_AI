@@ -1,0 +1,12 @@
+
+// RESULT 8: SAFE MULTI-USE PLANTS
+// Low-toxicity herbs with multiple uses
+
+
+MATCH (p:Plant)
+WHERE p.isSafeMultiUse = true
+RETURN p.name AS safeSuperPlant,
+       p.ailmentCount AS numUses,
+       p.toxicityClass AS toxicity
+ORDER BY numUses DESC, safeSuperPlant;
+

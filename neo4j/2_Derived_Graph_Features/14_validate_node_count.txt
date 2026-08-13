@@ -1,0 +1,8 @@
+
+// STEP 14: VALIDATE GRAPH
+// Node counts
+
+
+MATCH (n)
+RETURN labels(n)[0] AS label, count(*) AS count
+ORDER BY count DESC;

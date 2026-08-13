@@ -1,0 +1,12 @@
+
+// STEP 22B: CREATE PLANT SIMILARITY GRAPH
+// Plants linked if they share ailments
+
+
+CALL gds.graph.project.cypher(
+  'plantSimilarityGraph',
+  'MATCH (p:Plant) RETURN id(p) AS id, labels(p) AS labels',
+  'MATCH (p1:Plant)-[:TREATS]->(a:Ailment)<-[:TREATS]-(p2:Plant)
+   WHERE id(p1) < id(p2)
+   RETURN id(p1) AS source, id(p2) AS target'
+);

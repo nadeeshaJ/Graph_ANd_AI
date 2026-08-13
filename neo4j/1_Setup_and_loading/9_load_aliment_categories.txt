@@ -1,0 +1,5 @@
+// STEP 9: LOAD AILMENT CATEGORIES
+// Examples: Respiratory, Skin/Wound, Digestive
+
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/nadeeshaJ/Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/main/outputs/categories.csv" AS row
+MERGE (:AilmentCategory {name: row.category_name});

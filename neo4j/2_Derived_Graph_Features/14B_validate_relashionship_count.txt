@@ -1,0 +1,8 @@
+
+// STEP 14B: VALIDATE GRAPH
+// Relationship counts
+
+
+MATCH ()-[r]->()
+RETURN type(r) AS relationship, count(*) AS count
+ORDER BY count DESC;

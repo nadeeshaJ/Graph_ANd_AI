@@ -1,0 +1,13 @@
+
+// STEP 10: LOAD AILMENTS
+// (Plant)-[:TREATS]->(Ailment)-[:IN_CATEGORY]->(AilmentCategory)
+
+
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/nadeeshaJ/Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/main/outputs/plant_ailments.csv" AS row
+MERGE (a:Ailment {name: row.ailment_name})
+WITH a, row
+MATCH (c:AilmentCategory {name: row.category_name})
+MERGE (a)-[:IN_CATEGORY]->(c)
+WITH a, row
+MATCH (p:Plant {id: row.plant_id})
+MERGE (p)-[:TREATS {rawUsage: row.raw_usage}]->(a);

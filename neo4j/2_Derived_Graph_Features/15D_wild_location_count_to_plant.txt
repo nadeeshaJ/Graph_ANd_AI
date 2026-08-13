@@ -1,0 +1,8 @@
+
+// STEP 15D: WRITE WILD LOCATION COUNT TO PLANT
+
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:FOUND_IN]->(l:WildLocation)
+WITH p, count(DISTINCT l) AS locationCount
+SET p.locationCount = locationCount;

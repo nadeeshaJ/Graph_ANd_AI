@@ -1,0 +1,11 @@
+
+// RESULT 10: DEGREE CENTRALITY
+// Identifies highly connected "super-plants"
+
+
+MATCH (p:Plant)
+RETURN p.name AS plant,
+       p.irishName AS irishName,
+       p.degreeCentrality AS degreeCentrality
+ORDER BY degreeCentrality DESC
+LIMIT 10;

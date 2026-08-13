@@ -1,0 +1,8 @@
+
+// STEP 19B: WRITE BETWEENNESS TO NODES
+
+
+CALL gds.betweenness.write('ailmentGraph', {
+  writeProperty: 'betweenness'
+})
+YIELD nodePropertiesWritten;

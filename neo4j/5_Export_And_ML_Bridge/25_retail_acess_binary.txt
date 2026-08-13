@@ -1,0 +1,10 @@
+
+// STEP 25: RETAIL ACCESS BINARY
+//for optional logistic regression
+
+
+MATCH (p:Plant)
+RETURN
+  p.name AS plant,
+  CASE WHEN p.shopCount > 0 THEN 1 ELSE 0 END AS retail_accessible
+ORDER BY plant;

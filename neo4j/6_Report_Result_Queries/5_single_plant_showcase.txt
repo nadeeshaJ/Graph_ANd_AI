@@ -1,0 +1,10 @@
+
+// RESULT 5: SINGLE-PLANT SHOWCASE
+
+
+MATCH (p:Plant {name: 'Chamomile'})
+OPTIONAL MATCH (p)-[r1:TREATS]->(a:Ailment)
+OPTIONAL MATCH (p)-[r2:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[r3:FOUND_IN]->(l:WildLocation)
+OPTIONAL MATCH (p)-[r4:BELONGS_TO]->(f:Family)
+RETURN p, r1, a, r2, s, r3, l, r4, f;

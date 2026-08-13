@@ -1,0 +1,12 @@
+
+// STEP 20A: LOUVAIN TABLE
+// Detect therapeutic clusters
+
+
+CALL gds.louvain.stream('ailmentGraph')
+YIELD nodeId, communityId
+WITH gds.util.asNode(nodeId) AS n, communityId
+RETURN labels(n)[0] AS nodeType,
+       coalesce(n.name, n.irishName) AS entity,
+       communityId
+ORDER BY communityId, nodeType, entity;

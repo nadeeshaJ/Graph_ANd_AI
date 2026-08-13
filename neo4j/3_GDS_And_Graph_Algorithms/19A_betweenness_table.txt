@@ -1,0 +1,12 @@
+
+// STEP 19A: BETWEENNESS TABLE
+// Finds bridge plants
+
+
+CALL gds.betweenness.stream('ailmentGraph')
+YIELD nodeId, score
+WITH gds.util.asNode(nodeId) AS n, score
+WHERE n:Plant
+RETURN n.name AS plant, round(score, 3) AS betweenness
+ORDER BY betweenness DESC
+LIMIT 10;

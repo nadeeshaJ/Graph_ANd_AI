@@ -1,0 +1,23 @@
+
+// STEP 24: PLANT-LEVEL FEATURE TABLE
+// Export this for K-means and Lasso in Python
+
+
+MATCH (p:Plant)-[:BELONGS_TO]->(f:Family)
+RETURN
+  p.id AS plant_id,
+  p.name AS plant_name,
+  p.irishName AS irish_name,
+  f.name AS family,
+  p.famineFood AS famine_food,
+  p.toxicityClass AS toxicity_class,
+  p.ailmentCount AS ailment_count,
+  p.categoryCount AS category_count,
+  p.shopCount AS shop_count,
+  p.locationCount AS location_count,
+  p.degreeCentrality AS degree_centrality,
+  p.betweenness AS betweenness,
+  p.communityId AS community_id,
+  p.accessPattern AS access_pattern,
+  p.isSafeMultiUse AS safe_multi_use
+ORDER BY plant_name;

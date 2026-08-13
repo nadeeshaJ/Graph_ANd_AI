@@ -1,0 +1,23 @@
+
+// RESULT 16: SAFE CONDITION -> HERB QUERY
+// Practical deployment 
+
+WITH 'Respiratory' AS searchTerm
+
+MATCH (p:Plant)-[:TREATS]->(a:Ailment)
+OPTIONAL MATCH (a)-[:IN_CATEGORY]->(c:AilmentCategory)
+OPTIONAL MATCH (p)-[:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[:FOUND_IN]->(l:WildLocation)
+
+WHERE (toLower(a.name) = toLower(searchTerm)
+   OR toLower(c.name) = toLower(searchTerm))
+  AND p.toxicityClass = 'Low'
+
+RETURN
+  searchTerm AS searchInput,
+  p.name AS plant,
+  p.irishName AS irishName,
+  collect(DISTINCT a.name) AS matchedUses,
+  collect(DISTINCT s.name) AS shops,
+  collect(DISTINCT l.name) AS wildLocations
+ORDER BY plant;

@@ -1,0 +1,22 @@
+
+// STEP 7: CREATE CONSTRAINTS
+// Prevent duplicate nodes
+
+
+CREATE CONSTRAINT plant_id IF NOT EXISTS
+FOR (p:Plant) REQUIRE p.id IS UNIQUE;
+
+CREATE CONSTRAINT ailment_name IF NOT EXISTS
+FOR (a:Ailment) REQUIRE a.name IS UNIQUE;
+
+CREATE CONSTRAINT category_name IF NOT EXISTS
+FOR (c:AilmentCategory) REQUIRE c.name IS UNIQUE;
+
+CREATE CONSTRAINT family_name IF NOT EXISTS
+FOR (f:Family) REQUIRE f.name IS UNIQUE;
+
+CREATE CONSTRAINT location_name IF NOT EXISTS
+FOR (l:WildLocation) REQUIRE l.name IS UNIQUE;
+
+CREATE CONSTRAINT shop_name IF NOT EXISTS
+FOR (s:Shop) REQUIRE s.name IS UNIQUE;

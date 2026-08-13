@@ -1,0 +1,9 @@
+
+// STEP 22A: DROP OLD SIMILARITY GRAPH
+
+
+CALL gds.graph.exists('plantSimilarityGraph') YIELD exists
+WITH exists
+WHERE exists
+CALL gds.graph.drop('plantSimilarityGraph', false) YIELD graphName
+RETURN graphName;

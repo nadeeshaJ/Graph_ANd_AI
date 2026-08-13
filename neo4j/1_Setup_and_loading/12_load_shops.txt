@@ -1,0 +1,13 @@
+
+// STEP 12: LOAD SHOPS
+// Modern retail access
+
+
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/nadeeshaJ/Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/main/outputs/plant_shops.csv" AS row
+MERGE (s:Shop {name: row.shop_name})
+SET s.address = row.address,
+    s.type = row.source_type,
+    s.form = row.form
+WITH s, row
+MATCH (p:Plant {id: row.plant_id})
+MERGE (p)-[:AVAILABLE_AT {sourceType: row.source_type, form: row.form}]->(s);

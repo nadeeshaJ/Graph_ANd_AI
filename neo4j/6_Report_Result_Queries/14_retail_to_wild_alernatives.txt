@@ -1,0 +1,16 @@
+
+// RESULT 14: RETAIL TO WILD ALTERNATIVES
+
+
+CALL gds.nodeSimilarity.stream('plantSimilarityGraph')
+YIELD node1, node2, similarity
+WITH gds.util.asNode(node1) AS p1,
+     gds.util.asNode(node2) AS p2,
+     similarity
+WHERE EXISTS((p1)-[:AVAILABLE_AT]->(:Shop))
+  AND EXISTS((p2)-[:FOUND_IN]->(:WildLocation))
+RETURN p1.name AS retailLinkedPlant,
+       p2.name AS wildLinkedPlant,
+       round(similarity, 3) AS similarity
+ORDER BY similarity DESC
+LIMIT 10;

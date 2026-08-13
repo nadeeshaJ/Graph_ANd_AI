@@ -1,0 +1,8 @@
+
+// STEP 15C: WRITE SHOP COUNT TO PLANT
+
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:AVAILABLE_AT]->(s:Shop)
+WITH p, count(DISTINCT s) AS shopCount
+SET p.shopCount = shopCount;

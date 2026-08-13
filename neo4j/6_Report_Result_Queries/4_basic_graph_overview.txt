@@ -1,0 +1,8 @@
+
+// RESULT 4: BASIC GRAPH OVERVIEW
+// Plant -> Ailment -> Category visual
+
+
+MATCH (p:Plant)-[r1:TREATS]->(a:Ailment)-[r2:IN_CATEGORY]->(c:AilmentCategory)
+RETURN p, r1, a, r2, c
+LIMIT 30;

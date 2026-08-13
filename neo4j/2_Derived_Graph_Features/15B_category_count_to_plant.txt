@@ -1,0 +1,9 @@
+
+// STEP 15B: WRITE CATEGORY COUNT TO PLANT
+// Number of distinct ailment categories
+
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:TREATS]->(:Ailment)-[:IN_CATEGORY]->(c:AilmentCategory)
+WITH p, count(DISTINCT c) AS categoryCount
+SET p.categoryCount = categoryCount;

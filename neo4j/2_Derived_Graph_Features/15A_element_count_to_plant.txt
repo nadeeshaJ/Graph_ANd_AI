@@ -1,0 +1,9 @@
+
+// STEP 15A: WRITE AILMENT COUNT TO PLANT
+// Number of distinct ailments treated
+
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:TREATS]->(a:Ailment)
+WITH p, count(DISTINCT a) AS ailmentCount
+SET p.ailmentCount = ailmentCount;

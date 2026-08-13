@@ -1,0 +1,10 @@
+
+// STEP 26: HIGH VERSATILITY LABEL
+// 1 if plant treats more than 3 ailments
+
+
+MATCH (p:Plant)
+RETURN
+  p.name AS plant,
+  CASE WHEN p.ailmentCount > 3 THEN 1 ELSE 0 END AS high_versatility
+ORDER BY plant;

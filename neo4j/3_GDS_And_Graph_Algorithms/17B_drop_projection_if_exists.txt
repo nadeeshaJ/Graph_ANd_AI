@@ -1,0 +1,9 @@
+
+// STEP 17B: DROP OLD PROJECTION IF EXISTS
+
+
+CALL gds.graph.exists('ailmentGraph') YIELD exists
+WITH exists
+WHERE exists
+CALL gds.graph.drop('ailmentGraph', false) YIELD graphName
+RETURN graphName;

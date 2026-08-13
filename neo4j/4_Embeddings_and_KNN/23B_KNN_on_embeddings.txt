@@ -1,0 +1,22 @@
+
+// STEP 23B: KNN ON EMBEDDINGS
+// Finds nearest medicinal plant neighbors
+// based on learned embedding vectors
+
+
+CALL gds.knn.stream('ailmentGraph', {
+  nodeProperties: ['embedding'],
+  topK: 5,
+  randomSeed: 42,
+  concurrency: 1
+})
+YIELD node1, node2, similarity
+WITH gds.util.asNode(node1) AS p1,
+     gds.util.asNode(node2) AS p2,
+     similarity
+WHERE p1:Plant AND p2:Plant
+RETURN p1.name AS plant1,
+       p2.name AS plant2,
+       round(similarity, 3) AS similarity
+ORDER BY similarity DESC
+LIMIT 15;

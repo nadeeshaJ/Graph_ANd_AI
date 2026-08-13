@@ -1,0 +1,7 @@
+
+// STEP 16B: CATEGORY DISTRIBUTION
+
+
+MATCH (:Plant)-[:TREATS]->(:Ailment)-[:IN_CATEGORY]->(c:AilmentCategory)
+RETURN c.name AS category, count(*) AS links
+ORDER BY links DESC;

@@ -1,0 +1,1193 @@
+[
+  {
+    "plant_name": "Bee borage",
+    "scientific_name": "Borago officinalis L.",
+    "irish_name": "Borrairte gorm",
+    "plant_family": "Boraginaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Flowers eaten or in a drink for a cooling effect"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula, County Kerry"
+    ],
+    "cultural_importance": "Standard cooling herb",
+    "dublin_sources": [
+      {
+        "shop_name": "Arboretum Urban Green",
+        "address": "Parnell St, D1",
+        "form": "Potted"
+      },
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines, D6",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Belladonna / Deadly nightshade",
+    "scientific_name": "Atropa belladonna L.",
+    "irish_name": "Miot\u00f3g buide",
+    "plant_family": "Solanaceae",
+    "toxicity_level": "Highly Toxic / Restricted",
+    "is_famine_food": false,
+    "usages": [
+      "Poison",
+      "Chapped hands",
+      "Bad back",
+      "Fever"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Historically used as poison",
+    "dublin_sources": [
+      {
+        "shop_name": "Home of Herbs",
+        "address": "Marino, D3",
+        "form": "Restricted"
+      }
+    ]
+  },
+  {
+    "plant_name": "Blackberry",
+    "scientific_name": "Rubus spp.",
+    "irish_name": "Sceach / Dris",
+    "plant_family": "Rosaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Splinter removal"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula hedgerows"
+    ],
+    "cultural_importance": "Ubiquitous wild fruit",
+    "dublin_sources": [
+      {
+        "shop_name": "Nourish",
+        "address": "Wicklow Street, D2",
+        "form": "Dry"
+      },
+      {
+        "shop_name": "Wild Foraging",
+        "address": "Phoenix Park, D8",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Bogbean",
+    "scientific_name": "Menyanthes trifoliata L.",
+    "irish_name": "Bachr\u00e1n",
+    "plant_family": "Menyanthaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Spring cleanse",
+      "Liver",
+      "Blood cleaning"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula wetlands"
+    ],
+    "cultural_importance": "Traditional wetland tonic",
+    "dublin_sources": [
+      {
+        "shop_name": "Down to Earth",
+        "address": "S. Great George's St, D2",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Burdock",
+    "scientific_name": "Arctium lappa L.",
+    "irish_name": "Meacan doga",
+    "plant_family": "Asteraceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Boils",
+      "Arthritis",
+      "Rheumatism"
+    ],
+    "wild_locations": [
+      "Skellig road"
+    ],
+    "cultural_importance": "Commonly used for skin and joints",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines, D6",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Cabbage",
+    "scientific_name": "Brassica oleracea L.",
+    "irish_name": "Cab\u00e1iste",
+    "plant_family": "Brassicaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Blood",
+      "Soothing womb after birth"
+    ],
+    "wild_locations": [
+      "Local gardens"
+    ],
+    "cultural_importance": "Garden staple",
+    "dublin_sources": [
+      {
+        "shop_name": "SuperValu",
+        "address": "Aston Quay, D2",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "Carrageen moss",
+    "scientific_name": "Chondrus crispus Stackh.",
+    "irish_name": "Carraig\u00edn",
+    "plant_family": "Gigartinaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Arthritis",
+      "Rheumatism",
+      "Coughs",
+      "Bronchial",
+      "Constipation"
+    ],
+    "wild_locations": [
+      "Ocean"
+    ],
+    "cultural_importance": "Iconic Irish seaweed",
+    "dublin_sources": [
+      {
+        "shop_name": "Nourish",
+        "address": "Henry Street, D1",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Chamomile",
+    "scientific_name": "Chamaemelum nobile",
+    "irish_name": "Cam\u00e1n meall",
+    "plant_family": "Asteraceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Sleep",
+      "Calming",
+      "Chicken pox",
+      "Skin irritations",
+      "Pregnancy"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Widespread sleep aid",
+    "dublin_sources": [
+      {
+        "shop_name": "Down to Earth",
+        "address": "Dublin 2",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Charlock",
+    "scientific_name": "Sinapis arvensis L.",
+    "irish_name": "Praiseach bhu\u00ed",
+    "plant_family": "Brassicaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": true,
+    "usages": [
+      "Famine food staple"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula wild"
+    ],
+    "cultural_importance": "Historical survival food",
+    "dublin_sources": [
+      {
+        "shop_name": "Ticknock",
+        "address": "Dublin Mountains",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Cloves",
+    "scientific_name": "Syzygium aromaticum",
+    "irish_name": "N/A",
+    "plant_family": "Myrtaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Cold/Bronchitis",
+      "Toothache"
+    ],
+    "wild_locations": [
+      "Imported"
+    ],
+    "cultural_importance": "Standard spice-based medicine",
+    "dublin_sources": [
+      {
+        "shop_name": "Dunnes Stores",
+        "address": "Georges St, D2",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Comfrey / 'Knit bones'",
+    "scientific_name": "Symphytum officinale L.",
+    "irish_name": "Lus na gCnamh",
+    "plant_family": "Boraginaceae",
+    "toxicity_level": "Medium (Caution)",
+    "is_famine_food": false,
+    "usages": [
+      "Broken bones",
+      "Sore back",
+      "Asthma",
+      "Twisted ankle",
+      "Vitamin B12"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Known for 'knitting' bones",
+    "dublin_sources": [
+      {
+        "shop_name": "Home of Herbs",
+        "address": "Marino, D3",
+        "form": "Oil"
+      }
+    ]
+  },
+  {
+    "plant_name": "Dandelion",
+    "scientific_name": "Taraxacum officinale Weber",
+    "irish_name": "Caisearbh\u00e1n",
+    "plant_family": "Asteraceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Diuretic",
+      "Remove warts",
+      "Bladder",
+      "Detoxification"
+    ],
+    "wild_locations": [
+      "Wild gardens"
+    ],
+    "cultural_importance": "Called 'pissy-beds' by children",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Dock",
+    "scientific_name": "Rumex obtusifolia L.",
+    "irish_name": "Cop\u00f3g sr\u00e1ide",
+    "plant_family": "Polygonaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": true,
+    "usages": [
+      "Nettle stings",
+      "Famine food staple"
+    ],
+    "wild_locations": [
+      "Near nettles"
+    ],
+    "cultural_importance": "The symbiotic 'cure' for nettles",
+    "dublin_sources": [
+      {
+        "shop_name": "Phoenix Park",
+        "address": "Dublin 8",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Dulse",
+    "scientific_name": "Palmaria palmata (L.) Kuntze",
+    "irish_name": "Duileasc m\u00edn",
+    "plant_family": "Palmariaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Coughs",
+      "Bronchial",
+      "Gelatin dessert"
+    ],
+    "wild_locations": [
+      "Ocean"
+    ],
+    "cultural_importance": "Traditional snack seaweed",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Swan Centre",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Early purple orchid",
+    "scientific_name": "Orchis mascula (L.) L.",
+    "irish_name": "Magairl\u00edn meidhreach",
+    "plant_family": "Orchidaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Love charms"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula wild"
+    ],
+    "cultural_importance": "Rare folklore use for romance",
+    "dublin_sources": [
+      {
+        "shop_name": "Grasslands",
+        "address": "Rural Dublin",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Elder flowers",
+    "scientific_name": "Sambucus nigra L.",
+    "irish_name": "Trom",
+    "plant_family": "Caprifoliaceae",
+    "toxicity_level": "Low (Flowers)",
+    "is_famine_food": false,
+    "usages": [
+      "Pancakes",
+      "Fizzy drink",
+      "Colds",
+      "Fever"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula trees"
+    ],
+    "cultural_importance": "Seasonal spring beverage source",
+    "dublin_sources": [
+      {
+        "shop_name": "Nourish",
+        "address": "Wicklow Street",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Feverfew",
+    "scientific_name": "Tanacetum parthenium L.",
+    "irish_name": "Lus deartan",
+    "plant_family": "Asteraceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Arthritis",
+      "Rheumatism",
+      "Migraines"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Key headache remedy",
+    "dublin_sources": [
+      {
+        "shop_name": "Down to Earth",
+        "address": "George's St",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Flax",
+    "scientific_name": "Linum usitatissimum L.",
+    "irish_name": "L\u00edon",
+    "plant_family": "Linaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Bronchitis",
+      "Laxative"
+    ],
+    "wild_locations": [
+      "Historical Dingle"
+    ],
+    "cultural_importance": "Linked to Irish linen industry",
+    "dublin_sources": [
+      {
+        "shop_name": "Nourish",
+        "address": "Dublin 2",
+        "form": "Seeds"
+      }
+    ]
+  },
+  {
+    "plant_name": "Foxglove / 'Fairy fingers'",
+    "scientific_name": "Digitalis purpurea L.",
+    "irish_name": "Lus m\u00f3r",
+    "plant_family": "Scrophulariaceae",
+    "toxicity_level": "Highly Toxic",
+    "is_famine_food": false,
+    "usages": [
+      "Heart stimulant"
+    ],
+    "wild_locations": [
+      "Mount Brandon"
+    ],
+    "cultural_importance": "Known as 'Fairy fingers'; strong folklore presence",
+    "dublin_sources": [
+      {
+        "shop_name": "Not sold",
+        "address": "N/A",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Furze / Gorse",
+    "scientific_name": "Ulex europaeus L.",
+    "irish_name": "Aiteann",
+    "plant_family": "Fabaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Health tonic"
+    ],
+    "wild_locations": [
+      "Dingle hedgerows"
+    ],
+    "cultural_importance": "Ubiquitous Irish shrub",
+    "dublin_sources": [
+      {
+        "shop_name": "Howth Head",
+        "address": "Dublin",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Garlic (wild and cultivated)",
+    "scientific_name": "Allium sativum L.",
+    "irish_name": "Ga\u00edrle\u00f3g",
+    "plant_family": "Liliaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Colds",
+      "Congestion",
+      "Circulation",
+      "Chillblains"
+    ],
+    "wild_locations": [
+      "Gardens"
+    ],
+    "cultural_importance": "Universal antiseptic",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Gooseberry bush",
+    "scientific_name": "Ribes grossularia L.",
+    "irish_name": "Spri\u00fan\u00e1n",
+    "plant_family": "Grossulariaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Eye sty (thorns)"
+    ],
+    "wild_locations": [
+      "Gardens"
+    ],
+    "cultural_importance": "Folk eye cure using thorns",
+    "dublin_sources": [
+      {
+        "shop_name": "Arboretum",
+        "address": "Dublin 1",
+        "form": "Potted"
+      }
+    ]
+  },
+  {
+    "plant_name": "Hart\u2019s tongue fern",
+    "scientific_name": "Asplenium scolopendrium (L.)",
+    "irish_name": "Leadhb gadhair",
+    "plant_family": "Aspleniaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Burns ointment"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula wild"
+    ],
+    "cultural_importance": "Specific burn remedy",
+    "dublin_sources": [
+      {
+        "shop_name": "Home of Herbs",
+        "address": "Marino",
+        "form": "Oil"
+      }
+    ]
+  },
+  {
+    "plant_name": "Hemlock",
+    "scientific_name": "Conium maculatum L.",
+    "irish_name": "Tr\u00e9anlus",
+    "plant_family": "Apiaceae",
+    "toxicity_level": "Highly Toxic",
+    "is_famine_food": false,
+    "usages": [
+      "Poison historically"
+    ],
+    "wild_locations": [
+      "Dingle wild"
+    ],
+    "cultural_importance": "Lethal poison",
+    "dublin_sources": [
+      {
+        "shop_name": "Restricted",
+        "address": "N/A",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "House leek",
+    "scientific_name": "Sempervivum tectorum L.",
+    "irish_name": "Leigis",
+    "plant_family": "Crassulaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "General health"
+    ],
+    "wild_locations": [
+      "Roofs / Gardens"
+    ],
+    "cultural_importance": "Grown on roofs for protection",
+    "dublin_sources": [
+      {
+        "shop_name": "Arboretum",
+        "address": "Parnell St",
+        "form": "Potted"
+      }
+    ]
+  },
+  {
+    "plant_name": "Ivy",
+    "scientific_name": "Hedera helix L.",
+    "irish_name": "Eidhne\u00e1n",
+    "plant_family": "Araliaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Boils",
+      "Infections"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "One side draws, the other heals",
+    "dublin_sources": [
+      {
+        "shop_name": "St. Anne's Park",
+        "address": "Dublin",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Kelp",
+    "scientific_name": "Laminaria L.",
+    "irish_name": "Feamain builg\u00edneac",
+    "plant_family": "Phaeophyceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Arthritis",
+      "Rheumatism",
+      "Constipation",
+      "Tonic"
+    ],
+    "wild_locations": [
+      "Ocean"
+    ],
+    "cultural_importance": "Rich in iodine; traditional tonic",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Meadowsweet",
+    "scientific_name": "Filipendula ulmaria (L.) Maxim.",
+    "irish_name": "Airgead luachra",
+    "plant_family": "Rosaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Hips pain",
+      "Breathing pain"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Traditional pain reliever",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Nettles",
+    "scientific_name": "Urtica dioica L.",
+    "irish_name": "Neant\u00f3g",
+    "plant_family": "Urticaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": true,
+    "usages": [
+      "Blood tonic",
+      "Iron",
+      "Spring soup",
+      "Boils",
+      "Health tonic"
+    ],
+    "wild_locations": [
+      "Common wild"
+    ],
+    "cultural_importance": "Spring blood purifier",
+    "dublin_sources": [
+      {
+        "shop_name": "Nourish",
+        "address": "Henry St",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Oats",
+    "scientific_name": "Avena sativa L.",
+    "irish_name": "Coire",
+    "plant_family": "Poaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Skin",
+      "Headache"
+    ],
+    "wild_locations": [
+      "Farms"
+    ],
+    "cultural_importance": "Skin soothing staple",
+    "dublin_sources": [
+      {
+        "shop_name": "SuperValu",
+        "address": "Aston Quay",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "Onion",
+    "scientific_name": "Allium cepa L.",
+    "irish_name": "Uinnean",
+    "plant_family": "Lilliaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Cold",
+      "Bee sting",
+      "Drawing poison"
+    ],
+    "wild_locations": [
+      "Gardens"
+    ],
+    "cultural_importance": "Poultice for draw-out effects",
+    "dublin_sources": [
+      {
+        "shop_name": "Dunnes",
+        "address": "Dublin 2",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "Peas",
+    "scientific_name": "Pisum sativum L.",
+    "irish_name": "Piseanna garra\u00ed",
+    "plant_family": "Fabaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Measles"
+    ],
+    "wild_locations": [
+      "Gardens"
+    ],
+    "cultural_importance": "Historical childhood illness cure",
+    "dublin_sources": [
+      {
+        "shop_name": "Arboretum",
+        "address": "Parnell St",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "Peppermint",
+    "scientific_name": "Mentha piperita L.",
+    "irish_name": "Lus an Piobair",
+    "plant_family": "Lamiaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Digestion",
+      "Stomach",
+      "Calming"
+    ],
+    "wild_locations": [
+      "Gardens"
+    ],
+    "cultural_importance": "Standard digestive aid",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Ribwort plantain",
+    "scientific_name": "Plantago lanceolata L.",
+    "irish_name": "Sl\u00e1nlus",
+    "plant_family": "Plantaginaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Wounds",
+      "Insect stings"
+    ],
+    "wild_locations": [
+      "Wild surroundings"
+    ],
+    "cultural_importance": "'The healing herb'",
+    "dublin_sources": [
+      {
+        "shop_name": "Phoenix Park",
+        "address": "Dublin 8",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Greater plantain",
+    "scientific_name": "Plantago major L.",
+    "irish_name": "Sl\u00e1nlus m\u00f3r",
+    "plant_family": "Plantaginaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Wounds",
+      "Varicose ulcers",
+      "Stings"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Used for surface healing",
+    "dublin_sources": [
+      {
+        "shop_name": "Green spaces",
+        "address": "Dublin",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Potato",
+    "scientific_name": "Solanum tuberosum L.",
+    "irish_name": "Bun-tata",
+    "plant_family": "Solanaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Swollen glands"
+    ],
+    "wild_locations": [
+      "Gardens"
+    ],
+    "cultural_importance": "National staple; gland cure",
+    "dublin_sources": [
+      {
+        "shop_name": "SuperValu",
+        "address": "Aston Quay",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "Primrose",
+    "scientific_name": "Primula vulgaris Hudson",
+    "irish_name": "Samhairc\u00edn",
+    "plant_family": "Primulaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Rheumatic pains"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Early spring flowers for pain",
+    "dublin_sources": [
+      {
+        "shop_name": "Arboretum",
+        "address": "Parnell St",
+        "form": "Potted"
+      }
+    ]
+  },
+  {
+    "plant_name": "Red clover",
+    "scientific_name": "Trifolium pratense L.",
+    "irish_name": "Seamair dhearg",
+    "plant_family": "Fabaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Coughs"
+    ],
+    "wild_locations": [
+      "Wild fields"
+    ],
+    "cultural_importance": "Common cough remedy",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Senna",
+    "scientific_name": "Cassia spp.",
+    "irish_name": "N/A",
+    "plant_family": "Fabaceae",
+    "toxicity_level": "Medium (Laxative)",
+    "is_famine_food": false,
+    "usages": [
+      "Measles"
+    ],
+    "wild_locations": [
+      "Imported"
+    ],
+    "cultural_importance": "Imported purgative",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Silverweed",
+    "scientific_name": "Potentilla anserina L.",
+    "irish_name": "Brioscl\u00e1n",
+    "plant_family": "Rosaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": true,
+    "usages": [
+      "Famine food staple"
+    ],
+    "wild_locations": [
+      "Coastline"
+    ],
+    "cultural_importance": "Survival root during famine",
+    "dublin_sources": [
+      {
+        "shop_name": "Bull Island",
+        "address": "Dublin",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Sloe / Blackthorn",
+    "scientific_name": "Prunus spinosa L.",
+    "irish_name": "\u00c1irne",
+    "plant_family": "Rosaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Sloe gin"
+    ],
+    "wild_locations": [
+      "Hedgerows"
+    ],
+    "cultural_importance": "Blackthorn winter tonic",
+    "dublin_sources": [
+      {
+        "shop_name": "St. Anne's",
+        "address": "Clontarf",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Spearmint",
+    "scientific_name": "Mentha spicata L.",
+    "irish_name": "Mism\u00edn garra\u00ed",
+    "plant_family": "Lamiaceae",
+    "toxicity_level": "Low/Culinary",
+    "is_famine_food": false,
+    "usages": [
+      "Stomach",
+      "Calming"
+    ],
+    "wild_locations": [
+      "Gardens"
+    ],
+    "cultural_importance": "Garden mint staple",
+    "dublin_sources": [
+      {
+        "shop_name": "SuperValu",
+        "address": "Dublin 2",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "St. John's Wort",
+    "scientific_name": "Hypericum perforatum L.",
+    "irish_name": "Beathnua baineann",
+    "plant_family": "Clusiaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Depression",
+      "Feeling down"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Key emotional wellbeing herb",
+    "dublin_sources": [
+      {
+        "shop_name": "Down to Earth",
+        "address": "George's St",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Peat moss / Turf",
+    "scientific_name": "Sphagnum spp.",
+    "irish_name": "S\u00edoda na m\u00f3na",
+    "plant_family": "Sphagnaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Chapped hands",
+      "Bad tummy (soot)"
+    ],
+    "wild_locations": [
+      "Bog holes"
+    ],
+    "cultural_importance": "Deeply linked to Irish turf bogs",
+    "dublin_sources": [
+      {
+        "shop_name": "Garden Centers",
+        "address": "Dublin",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "Wood sorrel / shamrock",
+    "scientific_name": "Oxalis acetosella L.",
+    "irish_name": "Seamr\u00f3g",
+    "plant_family": "Oxalidaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Blood"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Symbolic Irish 'Shamrock'",
+    "dublin_sources": [
+      {
+        "shop_name": "Ticknock",
+        "address": "Dublin Mountains",
+        "form": "Wild"
+      }
+    ]
+  },
+  {
+    "plant_name": "Water lobelia",
+    "scientific_name": "Lobelia dortmanna L.",
+    "irish_name": "Pl\u00far an loch\u00e1in",
+    "plant_family": "Campanulaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Scarlet fever historically"
+    ],
+    "wild_locations": [
+      "Lake regions"
+    ],
+    "cultural_importance": "Rare aquatic medicine",
+    "dublin_sources": [
+      {
+        "shop_name": "Aquatic Nurseries",
+        "address": "Dublin Rural",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "Yarrow",
+    "scientific_name": "Achillea millefolium L.",
+    "irish_name": "Athair talon",
+    "plant_family": "Asteraceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Colds",
+      "Rheumatism"
+    ],
+    "wild_locations": [
+      "Dingle Peninsula"
+    ],
+    "cultural_importance": "Universal healing flowering plant",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Aloe vera",
+    "scientific_name": "Aloe vera (L.) Burm.f.",
+    "irish_name": "N/A",
+    "plant_family": "Asphodelaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Burns"
+    ],
+    "wild_locations": [
+      "Imported"
+    ],
+    "cultural_importance": "Modern retail burn cure discovery",
+    "dublin_sources": [
+      {
+        "shop_name": "The Hopsack",
+        "address": "Rathmines",
+        "form": "Fresh"
+      }
+    ]
+  },
+  {
+    "plant_name": "Lavender oil",
+    "scientific_name": "Lavandula angustifolia Mill.",
+    "irish_name": "N/A",
+    "plant_family": "Lamiaceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Relaxation",
+      "Skin"
+    ],
+    "wild_locations": [
+      "Imported"
+    ],
+    "cultural_importance": "Modern aromatherapy staple",
+    "dublin_sources": [
+      {
+        "shop_name": "Nourish",
+        "address": "Dublin 2",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Evening primrose oil",
+    "scientific_name": "Oenothera biennis L.",
+    "irish_name": "N/A",
+    "plant_family": "Onagraceae",
+    "toxicity_level": "Low",
+    "is_famine_food": false,
+    "usages": [
+      "Health fortified"
+    ],
+    "wild_locations": [
+      "Imported"
+    ],
+    "cultural_importance": "Retail supplement staple",
+    "dublin_sources": [
+      {
+        "shop_name": "Nourish",
+        "address": "Henry St",
+        "form": "Dry"
+      }
+    ]
+  },
+  {
+    "plant_name": "Arnica",
+    "scientific_name": "Arnica montana L.",
+    "irish_name": "N/A",
+    "plant_family": "Asteraceae",
+    "toxicity_level": "Low (Homeopathic)",
+    "is_famine_food": false,
+    "usages": [
+      "Healing",
+      "Bruising"
+    ],
+    "wild_locations": [
+      "Imported"
+    ],
+    "cultural_importance": "Homeopathic bruising remedy",
+    "dublin_sources": [
+      {
+        "shop_name": "Down to Earth",
+        "address": "George's St",
+        "form": "Dry"
+      }
+    ]
+  }
+]

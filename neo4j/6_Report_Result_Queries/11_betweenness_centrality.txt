@@ -1,0 +1,10 @@
+
+// RESULT 11: BETWEENNESS CENTRALITY
+// Identifies bridge plants
+
+
+MATCH (p:Plant)
+RETURN p.name AS plant,
+       round(p.betweenness, 3) AS betweenness
+ORDER BY p.betweenness DESC
+LIMIT 10;

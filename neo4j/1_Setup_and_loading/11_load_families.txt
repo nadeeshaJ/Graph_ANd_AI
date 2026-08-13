@@ -1,0 +1,10 @@
+
+// STEP 11: LOAD FAMILIES
+// (Plant)-[:BELONGS_TO]->(Family)
+
+
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/nadeeshaJ/Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/main/outputs/plant_families.csv" AS row
+MERGE (f:Family {name: row.family_name})
+WITH f, row
+MATCH (p:Plant {id: row.plant_id})
+MERGE (p)-[:BELONGS_TO]->(f);

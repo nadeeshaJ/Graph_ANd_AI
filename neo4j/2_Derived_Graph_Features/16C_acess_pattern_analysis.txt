@@ -1,0 +1,7 @@
+
+// STEP 16C: ACCESS PATTERN ANALYSIS
+
+
+MATCH (p:Plant)
+RETURN p.accessPattern AS accessPattern, count(*) AS plantCount
+ORDER BY plantCount DESC;

@@ -1,0 +1,8 @@
+
+// STEP 20B: WRITE LOUVAIN TO NODES
+
+
+CALL gds.louvain.write('ailmentGraph', {
+  writeProperty: 'communityId'
+})
+YIELD communityCount, nodePropertiesWritten;

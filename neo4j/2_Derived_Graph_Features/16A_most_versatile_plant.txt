@@ -1,0 +1,8 @@
+
+// STEP 16A: MOST VERSATILE PLANTS
+
+
+MATCH (p:Plant)-[:TREATS]->(a:Ailment)
+RETURN p.name AS plant, count(DISTINCT a) AS ailmentsTreated
+ORDER BY ailmentsTreated DESC
+LIMIT 10;

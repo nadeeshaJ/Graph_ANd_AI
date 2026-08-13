@@ -1,0 +1,16 @@
+
+// RESULT 17: SAFE CONDITION GRAPH VIEW
+
+
+WITH 'Respiratory' AS searchTerm
+
+MATCH (p:Plant)-[r1:TREATS]->(a:Ailment)-[r2:IN_CATEGORY]->(c:AilmentCategory)
+WHERE (toLower(a.name) = toLower(searchTerm)
+   OR toLower(c.name) = toLower(searchTerm))
+  AND p.toxicityClass = 'Low'
+
+OPTIONAL MATCH (p)-[r3:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[r4:FOUND_IN]->(l:WildLocation)
+
+RETURN p, r1, a, r2, c, r3, s, r4, l
+LIMIT 30;

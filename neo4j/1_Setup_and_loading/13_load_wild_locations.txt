@@ -1,0 +1,10 @@
+
+// STEP 13: LOAD WILD LOCATIONS
+// Traditional location links
+
+
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/nadeeshaJ/Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/main/outputs/plant_locations.csv" AS row
+MERGE (loc:WildLocation {name: row.location_name})
+WITH loc, row
+MATCH (p:Plant {id: row.plant_id})
+MERGE (p)-[:FOUND_IN]->(loc);
