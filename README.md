@@ -6,11 +6,7 @@ A Neo4j knowledge graph of **51 Irish medicinal plants**, built from traditional
 
 The graph links plants to ailments, therapeutic categories, botanical families, wild locations, and Dublin shops where plant-based remedies can be found. It supports explainable condition-to-herb search, similarity-based recommendation, and a graph-derived ML layer.
 
-**Module:** Graph and AI  
-**Assignment:** CA 02  
-**Student:** Nadeesha Jayasuriya (20093736)
-
-This work is an educational knowledge-graph case study. It is **not medical advice**.
+This is an educational knowledge-graph case study. It is **not medical advice**.
 
 ---
 
@@ -124,24 +120,17 @@ The ML layer is an early-stage extension on a small dataset. Results describe st
 ## Project structure
 
 ```text
-Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/
-├── Graph_and_AI_CS02_20093736.ipynb
 ├── README.md
 ├── requirements.txt
-├── .gitignore
+├── src/
+│   ├── prepare_graph_data.py
+│   └── graph_ml.py
 ├── assets/
 │   ├── schema_visualization.png
 │   ├── basic_graph_view.png
 │   └── chamomile_node.png
 ├── data/
-│   ├── ethnobotany_master_data_v2.json
-│   ├── categories.csv
-│   ├── plant_ailments.csv
-│   ├── plant_families.csv
-│   ├── plant_locations.csv
-│   └── plant_shops.csv
-├── docs/
-│   └── Graph_and_AI_CA02_20093736.pdf
+│   └── ethnobotany_master_data_v2.json
 ├── neo4j/
 │   ├── 1_Setup_and_loading/
 │   ├── 2_Derived_Graph_Features/
@@ -161,12 +150,11 @@ Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/
 
 | Path | Contents |
 |------|----------|
-| `assets/` | Neo4j screenshots from the built graph (schema, overview, Chamomile) |
-| `data/` | Source JSON and original graph-ready tables from the assignment folder |
-| `outputs/` | CSVs used by Neo4j `LOAD CSV`, plus EDA charts |
+| `src/` | Python: build graph tables, then cluster/model Neo4j exports |
+| `assets/` | Neo4j screenshots (schema, overview, Chamomile) |
+| `data/` | Source ethnobotanical JSON |
+| `outputs/` | Graph-ready CSVs used by Neo4j `LOAD CSV`, plus charts |
 | `neo4j/` | Cypher scripts, numbered in run order |
-| `docs/` | Written report |
-| Notebook | Data prep, EDA, and the Python ML extension |
 
 ---
 
@@ -179,7 +167,7 @@ git clone https://github.com/nadeeshaJ/Irish-Medicinal-Plant-Knowledge-Graph-Och
 cd Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-
 ```
 
-### 2. Python notebook
+### 2. Python environment
 
 **Windows (PowerShell)**
 
@@ -187,7 +175,6 @@ cd Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-jupyter notebook Graph_and_AI_CS02_20093736.ipynb
 ```
 
 **macOS / Linux**
@@ -196,22 +183,25 @@ jupyter notebook Graph_and_AI_CS02_20093736.ipynb
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-jupyter notebook Graph_and_AI_CS02_20093736.ipynb
 ```
 
-The notebook was originally run in Google Colab. Locally, skip the `files.upload()` cells and load:
+Build the graph-ready CSVs and EDA charts from the source JSON:
 
-```python
-json_file = "data/ethnobotany_master_data_v2.json"
+```bash
+python src/prepare_graph_data.py
 ```
 
-The later ML cells need `plant_graph_features_V2.csv`, exported from Neo4j using `neo4j/5_Export_And_ML_Bridge/24_plant_level_feature_table.txt`.
+After you have loaded the graph in Neo4j and exported the plant feature table (query `neo4j/5_Export_And_ML_Bridge/24_plant_level_feature_table.txt`), save it as `data/plant_graph_features.csv` and run:
+
+```bash
+python src/graph_ml.py
+```
 
 ### 3. Load the graph in Neo4j
 
 1. Start [Neo4j Desktop](https://neo4j.com/download/), Aura, or a Sandbox instance with **Graph Data Science (GDS)** enabled.
 2. Run `neo4j/1_Setup_and_loading/7_create_constraints.txt`.
-3. Run the remaining load scripts in folder `1_Setup_and_loading` (plants, categories, ailments, families, shops, locations).
+3. Run the remaining load scripts in `1_Setup_and_loading` (plants, categories, ailments, families, shops, locations).
 4. Continue through folders `2` → `6` in numeric order.
 
 The load scripts pull CSVs from this repository:
@@ -220,24 +210,11 @@ The load scripts pull CSVs from this repository:
 https://raw.githubusercontent.com/nadeeshaJ/Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/main/outputs/
 ```
 
-If you prefer a local import, copy the files from `outputs/` into Neo4j's import folder and change each `LOAD CSV` URL to `file:///plants.csv` (and the other filenames).
+For a local import, copy files from `outputs/` into Neo4j's import folder and change each `LOAD CSV` URL to `file:///plants.csv` (and the other filenames).
 
 ### 4. Condition-to-herb query
 
-Example: search for respiratory remedies (`neo4j/6_Report_Result_Queries/15_condtion_to_herb.txt`). A safety-first variant restricts results to low-toxicity plants (`16_condtion_to_herb_safe.txt`).
-
----
-
-## Notebook outline
-
-| Section | What it does |
-|---------|----------------|
-| Data preparation | Load the JSON, standardise ailments, toxicity, and access |
-| Graph-ready CSVs | Write plants, ailments, families, locations, shops, categories |
-| EDA | Versatility, categories, access, toxicity charts |
-| K-means | Cluster plants on graph-derived features |
-| Lasso | Predict ailment count from graph measures |
-| Logistic regression | Classify safe multi-use plants |
+Search for respiratory remedies with `neo4j/6_Report_Result_Queries/15_condtion_to_herb.txt`. A safety-first variant restricts results to low-toxicity plants (`16_condtion_to_herb_safe.txt`).
 
 ---
 
@@ -259,9 +236,3 @@ Example: search for respiratory remedies (`neo4j/6_Report_Result_Queries/15_cond
 - Dolan, J.M., 2007. Ochtrinil's legacy: Irish women's knowledge of medicinal plants. *Harvard Papers in Botany*, 12(2), pp.369–386.
 - [Neo4j documentation](https://neo4j.com/docs/)
 - [scikit-learn Lasso](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html)
-
----
-
-## AI usage
-
-AI assistance was used to improve ideas and cross-check correctness of the selected models.

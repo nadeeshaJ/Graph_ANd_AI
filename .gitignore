@@ -6,7 +6,9 @@ __pycache__/
 venv/
 env/
 
-# Jupyter
+# Notebooks and reports (keep the public repo as scripts + data)
+*.ipynb
+*.pdf
 .ipynb_checkpoints/
 
 # OS / IDE
