@@ -1,0 +1,54 @@
+plant_id,shop_name,address,form,source_type
+borago_officinalis_l,Arboretum Urban Green,"Parnell St, D1",Potted,Retail Fresh
+borago_officinalis_l,The Hopsack,"Rathmines, D6",Dry,Retail Dry
+atropa_belladonna_l,Home of Herbs,"Marino, D3",Restricted,Restricted
+rubus_spp,Nourish,"Wicklow Street, D2",Dry,Retail Dry
+rubus_spp,Wild Foraging,"Phoenix Park, D8",Wild,Wild
+menyanthes_trifoliata_l,Down to Earth,"S. Great George's St, D2",Dry,Retail Dry
+arctium_lappa_l,The Hopsack,"Rathmines, D6",Dry,Retail Dry
+brassica_oleracea_l,SuperValu,"Aston Quay, D2",Fresh,Retail Fresh
+chondrus_crispus_stackh,Nourish,"Henry Street, D1",Dry,Retail Dry
+chamaemelum_nobile,Down to Earth,Dublin 2,Dry,Retail Dry
+sinapis_arvensis_l,Ticknock,Dublin Mountains,Wild,Wild
+syzygium_aromaticum,Dunnes Stores,"Georges St, D2",Dry,Retail Dry
+symphytum_officinale_l,Home of Herbs,"Marino, D3",Oil,Retail Fresh
+taraxacum_officinale_weber,The Hopsack,Rathmines,Dry,Retail Dry
+rumex_obtusifolia_l,Phoenix Park,Dublin 8,Wild,Wild
+palmaria_palmata_l_kuntze,The Hopsack,Swan Centre,Dry,Retail Dry
+orchis_mascula_l_l,Grasslands,Rural Dublin,Wild,Wild
+sambucus_nigra_l,Nourish,Wicklow Street,Dry,Retail Dry
+tanacetum_parthenium_l,Down to Earth,George's St,Dry,Retail Dry
+linum_usitatissimum_l,Nourish,Dublin 2,Seeds,Retail Fresh
+digitalis_purpurea_l,Not sold,N/A,Wild,Wild
+ulex_europaeus_l,Howth Head,Dublin,Wild,Wild
+allium_sativum_l,The Hopsack,Rathmines,Dry,Retail Dry
+ribes_grossularia_l,Arboretum,Dublin 1,Potted,Retail Fresh
+asplenium_scolopendrium_l,Home of Herbs,Marino,Oil,Retail Fresh
+conium_maculatum_l,Restricted,N/A,Wild,Wild
+sempervivum_tectorum_l,Arboretum,Parnell St,Potted,Retail Fresh
+hedera_helix_l,St. Anne's Park,Dublin,Wild,Wild
+laminaria_l,The Hopsack,Rathmines,Dry,Retail Dry
+filipendula_ulmaria_l_maxim,The Hopsack,Rathmines,Dry,Retail Dry
+urtica_dioica_l,Nourish,Henry St,Dry,Retail Dry
+avena_sativa_l,SuperValu,Aston Quay,Fresh,Retail Fresh
+allium_cepa_l,Dunnes,Dublin 2,Fresh,Retail Fresh
+pisum_sativum_l,Arboretum,Parnell St,Fresh,Retail Fresh
+mentha_piperita_l,The Hopsack,Rathmines,Dry,Retail Dry
+plantago_lanceolata_l,Phoenix Park,Dublin 8,Wild,Wild
+plantago_major_l,Green spaces,Dublin,Wild,Wild
+solanum_tuberosum_l,SuperValu,Aston Quay,Fresh,Retail Fresh
+primula_vulgaris_hudson,Arboretum,Parnell St,Potted,Retail Fresh
+trifolium_pratense_l,The Hopsack,Rathmines,Dry,Retail Dry
+cassia_spp,The Hopsack,Rathmines,Dry,Retail Dry
+potentilla_anserina_l,Bull Island,Dublin,Wild,Wild
+prunus_spinosa_l,St. Anne's,Clontarf,Wild,Wild
+mentha_spicata_l,SuperValu,Dublin 2,Fresh,Retail Fresh
+hypericum_perforatum_l,Down to Earth,George's St,Dry,Retail Dry
+sphagnum_spp,Garden Centers,Dublin,Fresh,Retail Fresh
+oxalis_acetosella_l,Ticknock,Dublin Mountains,Wild,Wild
+lobelia_dortmanna_l,Aquatic Nurseries,Dublin Rural,Fresh,Retail Fresh
+achillea_millefolium_l,The Hopsack,Rathmines,Dry,Retail Dry
+aloe_vera_l_burm_f,The Hopsack,Rathmines,Fresh,Retail Fresh
+lavandula_angustifolia_mill,Nourish,Dublin 2,Dry,Retail Dry
+oenothera_biennis_l,Nourish,Henry St,Dry,Retail Dry
+arnica_montana_l,Down to Earth,George's St,Dry,Retail Dry

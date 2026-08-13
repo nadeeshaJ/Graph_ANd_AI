@@ -1,0 +1,616 @@
+name,description,query,id,parentId,isFolder
+Code_Backup,,,0,,true
+constraints,,"// =====================================================
+// STEP 7: CREATE CONSTRAINTS
+// Prevent duplicate nodes
+// =====================================================
+
+CREATE CONSTRAINT plant_id IF NOT EXISTS
+FOR (p:Plant) REQUIRE p.id IS UNIQUE;
+
+CREATE CONSTRAINT ailment_name IF NOT EXISTS
+FOR (a:Ailment) REQUIRE a.name IS UNIQUE;
+
+CREATE CONSTRAINT category_name IF NOT EXISTS
+FOR (c:AilmentCategory) REQUIRE c.name IS UNIQUE;
+
+CREATE CONSTRAINT family_name IF NOT EXISTS
+FOR (f:Family) REQUIRE f.name IS UNIQUE;
+
+CREATE CONSTRAINT location_name IF NOT EXISTS
+FOR (l:WildLocation) REQUIRE l.name IS UNIQUE;
+
+CREATE CONSTRAINT shop_name IF NOT EXISTS
+FOR (s:Shop) REQUIRE s.name IS UNIQUE;",1,0,false
+step_8,,"// =====================================================
+// STEP 8: LOAD PLANTS
+// Core medicinal plant entities
+// =====================================================
+
+LOAD CSV WITH HEADERS FROM ""https://raw.githubusercontent.com/nadeeshaJ/Graph_ANd_AI/main/outputs/plants.csv"" AS row
+MERGE (p:Plant {id: row.plant_id})
+SET p.name = row.plant_name,
+    p.sciName = row.scientific_name,
+    p.irishName = row.irish_name,
+    p.famineFood = toBoolean(row.is_famine_food),
+    p.culturalImportance = row.cultural_importance,
+    p.toxicityLabel = row.toxicity_label,
+    p.toxicityClass = row.toxicity_class;",2,0,false
+step_9,,"// =====================================================
+// STEP 9: LOAD AILMENT CATEGORIES
+// Examples: Respiratory, Skin/Wound, Digestive
+// =====================================================
+
+LOAD CSV WITH HEADERS FROM ""https://raw.githubusercontent.com/nadeeshaJ/Graph_ANd_AI/main/outputs/categories.csv"" AS row
+MERGE (:AilmentCategory {name: row.category_name});",3,0,false
+step_``10,,"// =====================================================
+// STEP 10: LOAD AILMENTS
+// (Plant)-[:TREATS]->(Ailment)-[:IN_CATEGORY]->(AilmentCategory)
+// =====================================================
+
+LOAD CSV WITH HEADERS FROM ""https://raw.githubusercontent.com/nadeeshaJ/Graph_ANd_AI/main/outputs/plant_ailments.csv"" AS row
+MERGE (a:Ailment {name: row.ailment_name})
+WITH a, row
+MATCH (c:AilmentCategory {name: row.category_name})
+MERGE (a)-[:IN_CATEGORY]->(c)
+WITH a, row
+MATCH (p:Plant {id: row.plant_id})
+MERGE (p)-[:TREATS {rawUsage: row.raw_usage}]->(a);",4,0,false
+step11,,"// =====================================================
+// STEP 11: LOAD FAMILIES
+// (Plant)-[:BELONGS_TO]->(Family)
+// =====================================================
+
+LOAD CSV WITH HEADERS FROM ""https://raw.githubusercontent.com/nadeeshaJ/Graph_ANd_AI/main/outputs/plant_families.csv"" AS row
+MERGE (f:Family {name: row.family_name})
+WITH f, row
+MATCH (p:Plant {id: row.plant_id})
+MERGE (p)-[:BELONGS_TO]->(f);",5,0,false
+step12,,"// =====================================================
+// STEP 12: LOAD SHOPS
+// Modern retail access
+// =====================================================
+
+LOAD CSV WITH HEADERS FROM ""https://raw.githubusercontent.com/nadeeshaJ/Graph_ANd_AI/main/outputs/plant_shops.csv"" AS row
+MERGE (s:Shop {name: row.shop_name})
+SET s.address = row.address,
+    s.type = row.source_type,
+    s.form = row.form
+WITH s, row
+MATCH (p:Plant {id: row.plant_id})
+MERGE (p)-[:AVAILABLE_AT {sourceType: row.source_type, form: row.form}]->(s);",6,0,false
+step13,,"// =====================================================
+// STEP 13: LOAD WILD LOCATIONS
+// Traditional location links
+// =====================================================
+
+LOAD CSV WITH HEADERS FROM ""https://raw.githubusercontent.com/nadeeshaJ/Graph_ANd_AI/main/outputs/plant_locations.csv"" AS row
+MERGE (loc:WildLocation {name: row.location_name})
+WITH loc, row
+MATCH (p:Plant {id: row.plant_id})
+MERGE (p)-[:FOUND_IN]->(loc);",7,0,false
+step14,,"// =====================================================
+// STEP 14: VALIDATE GRAPH
+// Node counts
+// =====================================================
+
+MATCH (n)
+RETURN labels(n)[0] AS label, count(*) AS count
+ORDER BY count DESC;",8,0,false
+step14B,,"// =====================================================
+// STEP 14B: VALIDATE GRAPH
+// Relationship counts
+// =====================================================
+
+MATCH ()-[r]->()
+RETURN type(r) AS relationship, count(*) AS count
+ORDER BY count DESC;",9,0,false
+step15A,,"// =====================================================
+// STEP 15A: WRITE AILMENT COUNT TO PLANT
+// Number of distinct ailments treated
+// =====================================================
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:TREATS]->(a:Ailment)
+WITH p, count(DISTINCT a) AS ailmentCount
+SET p.ailmentCount = ailmentCount;",10,0,false
+step15B,,"// =====================================================
+// STEP 15B: WRITE CATEGORY COUNT TO PLANT
+// Number of distinct ailment categories
+// =====================================================
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:TREATS]->(:Ailment)-[:IN_CATEGORY]->(c:AilmentCategory)
+WITH p, count(DISTINCT c) AS categoryCount
+SET p.categoryCount = categoryCount;",11,0,false
+step15c,,"// =====================================================
+// STEP 15C: WRITE SHOP COUNT TO PLANT
+// =====================================================
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:AVAILABLE_AT]->(s:Shop)
+WITH p, count(DISTINCT s) AS shopCount
+SET p.shopCount = shopCount;",12,0,false
+step15D,,"// =====================================================
+// STEP 15D: WRITE WILD LOCATION COUNT TO PLANT
+// =====================================================
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:FOUND_IN]->(l:WildLocation)
+WITH p, count(DISTINCT l) AS locationCount
+SET p.locationCount = locationCount;",13,0,false
+step15E,,"// =====================================================
+// STEP 15E: WRITE ACCESS PATTERN TO PLANT
+// =====================================================
+
+MATCH (p:Plant)
+OPTIONAL MATCH (p)-[:AVAILABLE_AT]->(s:Shop)
+WITH p, collect(DISTINCT s.type) AS sourceTypes
+SET p.accessPattern =
+CASE
+  WHEN 'Wild' IN sourceTypes AND size(sourceTypes) = 1 THEN 'Wild Only'
+  WHEN 'Wild' IN sourceTypes AND size(sourceTypes) > 1 THEN 'Mixed Access'
+  WHEN size(sourceTypes) = 1 THEN sourceTypes[0]
+  ELSE 'Mixed Retail'
+END;",14,0,false
+step16A,,"// =====================================================
+// STEP 16A: MOST VERSATILE PLANTS
+// =====================================================
+
+MATCH (p:Plant)-[:TREATS]->(a:Ailment)
+RETURN p.name AS plant, count(DISTINCT a) AS ailmentsTreated
+ORDER BY ailmentsTreated DESC
+LIMIT 10;",15,0,false
+step16B,,"// =====================================================
+// STEP 16B: CATEGORY DISTRIBUTION
+// =====================================================
+
+MATCH (:Plant)-[:TREATS]->(:Ailment)-[:IN_CATEGORY]->(c:AilmentCategory)
+RETURN c.name AS category, count(*) AS links
+ORDER BY links DESC;",16,0,false
+step16C,,"// =====================================================
+// STEP 16C: ACCESS PATTERN ANALYSIS
+// =====================================================
+
+MATCH (p:Plant)
+RETURN p.accessPattern AS accessPattern, count(*) AS plantCount
+ORDER BY plantCount DESC;",17,0,false
+step17,,"// =====================================================
+// STEP 17: CHECK GDS
+// =====================================================
+
+RETURN gds.version();",18,0,false
+step17B,,"// =====================================================
+// STEP 17B: DROP OLD PROJECTION IF EXISTS
+// =====================================================
+
+CALL gds.graph.exists('ailmentGraph') YIELD exists
+WITH exists
+WHERE exists
+CALL gds.graph.drop('ailmentGraph', false) YIELD graphName
+RETURN graphName;",19,0,false
+step17C,,"// =====================================================
+// STEP 17C: CREATE MAIN GDS PROJECTION
+// Plant-Ailment graph for graph algorithms
+// =====================================================
+
+CALL gds.graph.project(
+  'ailmentGraph',
+  ['Plant', 'Ailment'],
+  { TREATS: { orientation: 'UNDIRECTED' } }
+);",20,0,false
+step18A,,"// =====================================================
+// STEP 18A: DEGREE CENTRALITY TABLE
+// =====================================================
+
+CALL gds.degree.stream('ailmentGraph')
+YIELD nodeId, score
+WITH gds.util.asNode(nodeId) AS n, score
+WHERE n:Plant
+RETURN n.name AS plant, score AS degreeCentrality
+ORDER BY degreeCentrality DESC
+LIMIT 10;",21,0,false
+step18B,,"// =====================================================
+// STEP 18B: WRITE DEGREE CENTRALITY TO NODES
+// =====================================================
+
+CALL gds.degree.write('ailmentGraph', {
+  writeProperty: 'degreeCentrality'
+})
+YIELD nodePropertiesWritten;",22,0,false
+step19A,,"// =====================================================
+// STEP 19A: BETWEENNESS TABLE
+// Finds bridge plants
+// =====================================================
+
+CALL gds.betweenness.stream('ailmentGraph')
+YIELD nodeId, score
+WITH gds.util.asNode(nodeId) AS n, score
+WHERE n:Plant
+RETURN n.name AS plant, round(score, 3) AS betweenness
+ORDER BY betweenness DESC
+LIMIT 10;",23,0,false
+step19B,,"// =====================================================
+// STEP 19B: WRITE BETWEENNESS TO NODES
+// =====================================================
+
+CALL gds.betweenness.write('ailmentGraph', {
+  writeProperty: 'betweenness'
+})
+YIELD nodePropertiesWritten;",24,0,false
+step20A,,"// =====================================================
+// STEP 20A: LOUVAIN TABLE
+// Detect therapeutic clusters
+// =====================================================
+
+CALL gds.louvain.stream('ailmentGraph')
+YIELD nodeId, communityId
+WITH gds.util.asNode(nodeId) AS n, communityId
+RETURN labels(n)[0] AS nodeType,
+       coalesce(n.name, n.irishName) AS entity,
+       communityId
+ORDER BY communityId, nodeType, entity;",25,0,false
+step20B,,"// =====================================================
+// STEP 20B: WRITE LOUVAIN TO NODES
+// =====================================================
+
+CALL gds.louvain.write('ailmentGraph', {
+  writeProperty: 'communityId'
+})
+YIELD communityCount, nodePropertiesWritten;",26,0,false
+step21,,"// =====================================================
+// STEP 21: WRITE SAFE MULTI-USE FLAG
+// Useful for later recommendation and ML
+// =====================================================
+
+MATCH (p:Plant)
+SET p.isSafeMultiUse =
+CASE
+  WHEN p.toxicityClass = 'Low' AND p.ailmentCount > 2 THEN true
+  ELSE false
+END;",27,0,false
+syep22A,,"// =====================================================
+// STEP 22A: DROP OLD SIMILARITY GRAPH
+// =====================================================
+
+CALL gds.graph.exists('plantSimilarityGraph') YIELD exists
+WITH exists
+WHERE exists
+CALL gds.graph.drop('plantSimilarityGraph', false) YIELD graphName
+RETURN graphName;",28,0,false
+step22B,,"// =====================================================
+// STEP 22B: CREATE PLANT SIMILARITY GRAPH
+// Plants linked if they share ailments
+// =====================================================
+
+CALL gds.graph.project.cypher(
+  'plantSimilarityGraph',
+  'MATCH (p:Plant) RETURN id(p) AS id, labels(p) AS labels',
+  'MATCH (p1:Plant)-[:TREATS]->(a:Ailment)<-[:TREATS]-(p2:Plant)
+   WHERE id(p1) < id(p2)
+   RETURN id(p1) AS source, id(p2) AS target'
+);",29,0,false
+step22C,,"// =====================================================
+// STEP 22C: NODE SIMILARITY TABLE
+// Recommendation-ready similarity
+// =====================================================
+
+CALL gds.nodeSimilarity.stream('plantSimilarityGraph')
+YIELD node1, node2, similarity
+WITH gds.util.asNode(node1) AS p1,
+     gds.util.asNode(node2) AS p2,
+     similarity
+RETURN p1.name AS plant1,
+       p2.name AS plant2,
+       round(similarity, 3) AS similarity
+ORDER BY similarity DESC
+LIMIT 15;",30,0,false
+step23A,,"// =====================================================
+// STEP 23A: CREATE FASTRP EMBEDDINGS
+// Graph ML representation learning
+// =====================================================
+
+CALL gds.fastRP.mutate('ailmentGraph', {
+  mutateProperty: 'embedding',
+  embeddingDimension: 64,
+  randomSeed: 42
+})
+YIELD nodePropertiesWritten;",31,0,false
+step23B,,"// =====================================================
+// STEP 23B: KNN ON EMBEDDINGS
+// Stronger graph ML recommendation
+// =====================================================
+
+CALL gds.knn.stream('ailmentGraph', {
+  nodeProperties: ['embedding'],
+  topK: 5,
+  randomSeed: 42,
+  concurrency: 1
+})
+YIELD node1, node2, similarity
+WITH gds.util.asNode(node1) AS p1,
+     gds.util.asNode(node2) AS p2,
+     similarity
+WHERE p1:Plant AND p2:Plant
+RETURN p1.name AS plant1,
+       p2.name AS plant2,
+       round(similarity, 3) AS similarity
+ORDER BY similarity DESC
+LIMIT 15;",32,0,false
+step24,,"// =====================================================
+// STEP 24: PLANT-LEVEL FEATURE TABLE
+// Export this for K-means and Lasso in Python
+// =====================================================
+
+MATCH (p:Plant)-[:BELONGS_TO]->(f:Family)
+RETURN
+  p.id AS plant_id,
+  p.name AS plant_name,
+  p.irishName AS irish_name,
+  f.name AS family,
+  p.famineFood AS famine_food,
+  p.toxicityClass AS toxicity_class,
+  p.ailmentCount AS ailment_count,
+  p.categoryCount AS category_count,
+  p.shopCount AS shop_count,
+  p.locationCount AS location_count,
+  p.degreeCentrality AS degree_centrality,
+  p.betweenness AS betweenness,
+  p.communityId AS community_id,
+  p.accessPattern AS access_pattern,
+  p.isSafeMultiUse AS safe_multi_use
+ORDER BY plant_name;",33,0,false
+step25,,"// =====================================================
+// STEP 25: RETAIL ACCESS BINARY
+// Useful for optional logistic regression
+// =====================================================
+
+MATCH (p:Plant)
+RETURN
+  p.name AS plant,
+  CASE WHEN p.shopCount > 0 THEN 1 ELSE 0 END AS retail_accessible
+ORDER BY plant;",34,0,false
+step26,,"// =====================================================
+// STEP 26: HIGH VERSATILITY LABEL
+// 1 if plant treats more than 3 ailments
+// =====================================================
+
+MATCH (p:Plant)
+RETURN
+  p.name AS plant,
+  CASE WHEN p.ailmentCount > 3 THEN 1 ELSE 0 END AS high_versatility
+ORDER BY plant;",35,0,false
+result3,,"// =====================================================
+// RESULT 3: SCHEMA VISUALIZATION
+// Best for ontology / graph schema screenshot
+// =====================================================
+
+CALL db.schema.visualization();",36,0,false
+result3B,,"// =====================================================
+// RESULT 3B: ONTOLOGY PREVIEW FALLBACK
+// Visual structure of main node and relationship types
+// =====================================================
+
+MATCH (p:Plant)-[:TREATS]->(a:Ailment)-[:IN_CATEGORY]->(c:AilmentCategory)
+MATCH (p)-[:BELONGS_TO]->(f:Family)
+MATCH (p)-[:AVAILABLE_AT]->(s:Shop)
+MATCH (p)-[:FOUND_IN]->(l:WildLocation)
+RETURN p, a, c, f, s, l
+LIMIT 1;",37,0,false
+result4,,"// =====================================================
+// RESULT 4: BASIC GRAPH OVERVIEW
+// Plant -> Ailment -> Category visual
+// =====================================================
+
+MATCH (p:Plant)-[r1:TREATS]->(a:Ailment)-[r2:IN_CATEGORY]->(c:AilmentCategory)
+RETURN p, r1, a, r2, c
+LIMIT 30;",38,0,false
+result5,,"// =====================================================
+// RESULT 5: ENRICHED SINGLE-PLANT SHOWCASE
+// Best graph demo for report and presentation
+// =====================================================
+
+MATCH (p:Plant {name: 'Chamomile'})
+OPTIONAL MATCH (p)-[r1:TREATS]->(a:Ailment)
+OPTIONAL MATCH (p)-[r2:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[r3:FOUND_IN]->(l:WildLocation)
+OPTIONAL MATCH (p)-[r4:BELONGS_TO]->(f:Family)
+RETURN p, r1, a, r2, s, r3, l, r4, f;",39,0,false
+result8,,"// =====================================================
+// RESULT 8: SAFE MULTI-USE PLANTS
+// Low-toxicity herbs with multiple uses
+// =====================================================
+
+MATCH (p:Plant)
+WHERE p.isSafeMultiUse = true
+RETURN p.name AS safeSuperPlant,
+       p.ailmentCount AS numUses,
+       p.toxicityClass AS toxicity
+ORDER BY numUses DESC, safeSuperPlant;
+
+",40,0,false
+output1,,"MATCH (p:Plant {isSafeMultiUse: true})-[:TREATS]->(a:Ailment)
+RETURN p.name AS safeSuperPlant,
+       count(DISTINCT a) AS numUses,
+       collect(DISTINCT a.name) AS uses
+ORDER BY numUses DESC;",41,0,false
+result9,,"// =====================================================
+// RESULT 9: ACCESS PATTERN ANALYSIS
+// Retail vs wild availability distribution
+// =====================================================
+
+MATCH (p:Plant)
+RETURN p.accessPattern AS accessPattern, count(*) AS plantCount
+ORDER BY plantCount DESC;",42,0,false
+result10,,"// =====================================================
+// RESULT 10: DEGREE CENTRALITY
+// Identifies highly connected ""super-plants""
+// =====================================================
+
+MATCH (p:Plant)
+RETURN p.name AS plant,
+       p.irishName AS irishName,
+       p.degreeCentrality AS degreeCentrality
+ORDER BY degreeCentrality DESC
+LIMIT 10;",43,0,false
+result11,,"// =====================================================
+// RESULT 11: BETWEENNESS CENTRALITY
+// Identifies bridge plants
+// =====================================================
+
+MATCH (p:Plant)
+RETURN p.name AS plant,
+       round(p.betweenness, 3) AS betweenness
+ORDER BY p.betweenness DESC
+LIMIT 10;",44,0,false
+result12,,"// =====================================================
+// RESULT 12: LOUVAIN COMMUNITY OUTPUT
+// Use for therapeutic cluster interpretation
+// =====================================================
+
+MATCH (p:Plant)
+RETURN p.name AS plant,
+       p.communityId AS communityId,
+       p.degreeCentrality AS degreeCentrality,
+       p.ailmentCount AS ailmentCount
+ORDER BY communityId, degreeCentrality DESC;",45,0,false
+result12A,,"// 1. Find plants and their ailments to build the community profile
+MATCH (p:Plant)-[:TREATS]->(a:Ailment)
+WITH p.communityId AS communityId, 
+     collect(DISTINCT a.name)[0..10] AS sampleAilments,
+     collect(DISTINCT p.name) AS allPlantsInCommunity
+
+// 2. Re-match plants to get individual stats, filtered by the communities found above
+MATCH (p:Plant)
+WHERE p.communityId = communityId
+RETURN p.communityId AS communityId,
+       p.name AS plant,
+       p.degreeCentrality AS degreeCentrality,
+       p.ailmentCount AS ailmentCount,
+       sampleAilments,
+       // We can also show how many other plants are in this same cluster
+       size(allPlantsInCommunity) AS totalPlantsInCommunity
+ORDER BY communityId, degreeCentrality DESC;",46,0,false
+result14,,"// =====================================================
+// RESULT 14: RETAIL TO WILD ALTERNATIVES
+// Strong graph-ML use case
+// =====================================================
+
+CALL gds.nodeSimilarity.stream('plantSimilarityGraph')
+YIELD node1, node2, similarity
+WITH gds.util.asNode(node1) AS p1,
+     gds.util.asNode(node2) AS p2,
+     similarity
+WHERE EXISTS((p1)-[:AVAILABLE_AT]->(:Shop))
+  AND EXISTS((p2)-[:FOUND_IN]->(:WildLocation))
+RETURN p1.name AS retailLinkedPlant,
+       p2.name AS wildLinkedPlant,
+       round(similarity, 3) AS similarity
+ORDER BY similarity DESC
+LIMIT 10;",47,0,false
+result15,,"// =====================================================
+// RESULT 15: CONDITION -> HERB QUERY
+// Core deployment / explainable feature
+// =====================================================
+
+WITH 'Respiratory' AS searchTerm
+
+MATCH (p:Plant)-[:TREATS]->(a:Ailment)
+OPTIONAL MATCH (a)-[:IN_CATEGORY]->(c:AilmentCategory)
+OPTIONAL MATCH (p)-[:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[:FOUND_IN]->(l:WildLocation)
+
+WHERE toLower(a.name) = toLower(searchTerm)
+   OR toLower(c.name) = toLower(searchTerm)
+
+RETURN
+  searchTerm AS searchInput,
+  p.name AS plant,
+  p.irishName AS irishName,
+  p.toxicityClass AS toxicity,
+  collect(DISTINCT a.name) AS matchedUses,
+  collect(DISTINCT s.name) AS shops,
+  collect(DISTINCT l.name) AS wildLocations
+ORDER BY plant;",48,0,false
+result16,,"// =====================================================
+// RESULT 16: SAFE CONDITION -> HERB QUERY
+// Practical deployment feature for report
+// =====================================================
+
+WITH 'Respiratory' AS searchTerm
+
+MATCH (p:Plant)-[:TREATS]->(a:Ailment)
+OPTIONAL MATCH (a)-[:IN_CATEGORY]->(c:AilmentCategory)
+OPTIONAL MATCH (p)-[:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[:FOUND_IN]->(l:WildLocation)
+
+WHERE (toLower(a.name) = toLower(searchTerm)
+   OR toLower(c.name) = toLower(searchTerm))
+  AND p.toxicityClass = 'Low'
+
+RETURN
+  searchTerm AS searchInput,
+  p.name AS plant,
+  p.irishName AS irishName,
+  collect(DISTINCT a.name) AS matchedUses,
+  collect(DISTINCT s.name) AS shops,
+  collect(DISTINCT l.name) AS wildLocations
+ORDER BY plant;",49,0,false
+result17,,"// =====================================================
+// RESULT 17: SAFE CONDITION GRAPH VIEW
+// Good graph screenshot for report / deployment section
+// =====================================================
+
+WITH 'Respiratory' AS searchTerm
+
+MATCH (p:Plant)-[r1:TREATS]->(a:Ailment)-[r2:IN_CATEGORY]->(c:AilmentCategory)
+WHERE (toLower(a.name) = toLower(searchTerm)
+   OR toLower(c.name) = toLower(searchTerm))
+  AND p.toxicityClass = 'Low'
+
+OPTIONAL MATCH (p)-[r3:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[r4:FOUND_IN]->(l:WildLocation)
+
+RETURN p, r1, a, r2, c, r3, s, r4, l
+LIMIT 30;",50,0,false
+output2,,CALL db.schema.visualization();,51,0,false
+output3,,"MATCH (p:Plant)-[:TREATS]->(a:Ailment)
+RETURN p, a
+LIMIT 30;",52,0,false
+output4,,"MATCH (p:Plant {name: 'Chamomile'})
+OPTIONAL MATCH (p)-[r1:TREATS]->(a:Ailment)
+OPTIONAL MATCH (p)-[r2:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[r3:FOUND_IN]->(l:WildLocation)
+OPTIONAL MATCH (p)-[r4:BELONGS_TO]->(f:Family)
+RETURN p, r1, a, r2, s, r3, l, r4, f;",53,0,false
+output5,,"WITH 'Cold' AS searchTerm
+
+MATCH (p:Plant)-[r1:TREATS]->(a:Ailment)-[r2:IN_CATEGORY]->(c:AilmentCategory)
+WHERE (toLower(a.name) = toLower(searchTerm)
+   OR toLower(c.name) = toLower(searchTerm))
+  AND p.toxicityClass = 'Low'
+
+OPTIONAL MATCH (p)-[r3:AVAILABLE_AT]->(s:Shop)
+OPTIONAL MATCH (p)-[r4:FOUND_IN]->(l:WildLocation)
+
+RETURN p, r1, a, r2, c, r3, s, r4, l
+LIMIT 30;",54,0,false
+output6,,"CALL gds.nodeSimilarity.stream('plantSimilarityGraph')
+YIELD node1, node2, similarity
+WITH gds.util.asNode(node1) AS p1,
+     gds.util.asNode(node2) AS p2,
+     similarity
+RETURN p1.name AS plant1,
+       p2.name AS plant2,
+       round(similarity, 3) AS similarity
+ORDER BY similarity DESC
+LIMIT 15;",55,0,false
+output7,,"WITH 'Cold' AS searchTerm
+
+MATCH (p:Plant)-[r1:TREATS]->(a:Ailment)-[r2:IN_CATEGORY]->(c:AilmentCategory)
+WHERE (toLower(a.name) = toLower(searchTerm)
+   OR toLower(c.name) = toLower(searchTerm))
+  AND p.toxicityClass = 'Low'
+
+RETURN p, r1, a, r2, c
+LIMIT 25;",56,0,false

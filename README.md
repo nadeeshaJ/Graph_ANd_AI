@@ -1,6 +1,6 @@
 # Irish Medicinal Plant Knowledge Graph (Ochtrinil's Legacy)
 
-![Most versatile plants in the knowledge graph](outputs/charts/top_versatile_plants.png)
+![Neo4j graph schema: Plant linked to Ailment, Family, WildLocation, and Shop](assets/schema_visualization.png)
 
 A Neo4j knowledge graph of **51 Irish medicinal plants**, built from traditional ethnobotanical knowledge and extended with graph algorithms and machine learning.
 
@@ -53,6 +53,16 @@ WildLocation ◄── Plant ──► Shop
 ```
 
 Source knowledge was extracted from Dolan (2007), *Ochtrinil's legacy: Irish women's knowledge of medicinal plants*, then cleaned, normalised, and loaded as graph-ready CSVs.
+
+### Neo4j views from the built graph
+
+Plant–ailment neighbourhood in the loaded graph:
+
+![Plant–ailment graph neighbourhood in Neo4j](assets/basic_graph_view.png)
+
+Chamomile as a case-study node — uses, family, wild location, and a Dublin shop:
+
+![Chamomile node with TREATS, BELONGS_TO, FOUND_IN, and AVAILABLE_AT links](assets/chamomile_node.png)
 
 ---
 
@@ -119,8 +129,17 @@ Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
+├── assets/
+│   ├── schema_visualization.png
+│   ├── basic_graph_view.png
+│   └── chamomile_node.png
 ├── data/
-│   └── ethnobotany_master_data_v2.json
+│   ├── ethnobotany_master_data_v2.json
+│   ├── categories.csv
+│   ├── plant_ailments.csv
+│   ├── plant_families.csv
+│   ├── plant_locations.csv
+│   └── plant_shops.csv
 ├── docs/
 │   └── Graph_and_AI_CA02_20093736.pdf
 ├── neo4j/
@@ -142,8 +161,9 @@ Irish-Medicinal-Plant-Knowledge-Graph-Ochtrinil-s-Legacy-/
 
 | Path | Contents |
 |------|----------|
-| `data/` | Source JSON used to build the graph tables |
-| `outputs/` | Neo4j-ready CSVs and EDA charts |
+| `assets/` | Neo4j screenshots from the built graph (schema, overview, Chamomile) |
+| `data/` | Source JSON and original graph-ready tables from the assignment folder |
+| `outputs/` | CSVs used by Neo4j `LOAD CSV`, plus EDA charts |
 | `neo4j/` | Cypher scripts, numbered in run order |
 | `docs/` | Written report |
 | Notebook | Data prep, EDA, and the Python ML extension |
